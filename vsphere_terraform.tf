@@ -104,23 +104,20 @@ resource "vsphere_virtual_machine" "vm" {
 		type = "ssh"
 		user = "john"
 		password = "${var.ssh_password}"
-
-		timout = "1m"
+		host = "${var.vm_ip}"
+		timeout = "1m"
 	}
 
 	provisioner "remote-exec" {
 		inline = [
 			"echo ${var.ssh_password} | sudo -S apt-get update",
-			"sudo apt-get install -y python"
+			"sudo apt-get install -y python3",
+			"sudo apt-get install -y nodejs",
+			"sudo apt-get install -y npm",
+			"sudo apt-get install -y nginx"
 		]
 	}
 
-	provisioner "local-exec" {
-		command = <<EOF
-			echo "[demo]" >> inventory
-			echo "${var.vm_ip} ansible_user=john ansible_pass=287548 ansible_connection=ssh" >> inventory
-			EOF
-	}
 	clone {
 		template_uuid = "${data.vsphere_virtual_machine.template.id}"
 

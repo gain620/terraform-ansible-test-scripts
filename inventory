@@ -1,0 +1,14 @@
+[demo]
+172.27.0.158 ansible_user=john ansible_pass=287548 ansible_connection=ssh
+[demo]
+172.27.0.158 ansible_user=john ansible_pass=287548 ansible_connection=ssh
+[demo]
+172.27.0.158 ansible_user=john ansible_pass=287548 ansible_connection=ssh
+[demo]
+172.27.0.158 ansible_user=john ansible_pass=287548 ansible_connection=ssh
+[demo]
+172.27.0.158 ansible_user=john ansible_pass=287548 ansible_connection=ssh
+[demo]
+172.27.0.158 ansible_user=john ansible_pass=287548 ansible_connection=ssh
+[demo]
+172.27.0.158 ansible_user=john ansible_pass=287548 ansible_connection=ssh

@@ -1,0 +1,2361 @@
+2019/08/20 19:31:57 [INFO] Terraform version: 0.12.6  
+2019/08/20 19:31:57 [INFO] Go runtime version: go1.12.4
+2019/08/20 19:31:57 [INFO] CLI args: []string{"/usr/local/bin/terraform", "apply"}
+2019/08/20 19:31:57 [DEBUG] Attempting to open CLI config file: /home/john/.terraformrc
+2019/08/20 19:31:57 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2019/08/20 19:31:57 [INFO] CLI command args: []string{"apply"}
+2019/08/20 19:31:57 [TRACE] Meta.Backend: no config given or present on disk, so returning nil config
+2019/08/20 19:31:57 [TRACE] Meta.Backend: backend has not previously been initialized in this working directory
+2019/08/20 19:31:57 [DEBUG] New state was assigned lineage "1b32afce-cc79-b657-7edf-6c5d06946c86"
+2019/08/20 19:31:57 [TRACE] Meta.Backend: using default local state only (no backend configuration, and no existing initialized backend)
+2019/08/20 19:31:57 [TRACE] Meta.Backend: instantiated backend of type <nil>
+2019/08/20 19:31:57 [DEBUG] checking for provider in "."
+2019/08/20 19:31:57 [DEBUG] checking for provider in "/usr/local/bin"
+2019/08/20 19:31:57 [DEBUG] checking for provider in ".terraform/plugins/linux_amd64"
+2019/08/20 19:31:57 [DEBUG] found provider "terraform-provider-vsphere_v1.12.0_x4"
+2019/08/20 19:31:57 [DEBUG] found valid plugin: "vsphere", "1.12.0", "/home/john/terraform-ansible-test-scripts/.terraform/plugins/linux_amd64/terraform-provider-vsphere_v1.12.0_x4"
+2019/08/20 19:31:57 [DEBUG] checking for provisioner in "."
+2019/08/20 19:31:57 [DEBUG] checking for provisioner in "/usr/local/bin"
+2019/08/20 19:31:57 [DEBUG] checking for provisioner in ".terraform/plugins/linux_amd64"
+2019/08/20 19:31:57 [TRACE] Meta.Backend: backend <nil> does not support operations, so wrapping it in a local backend
+2019/08/20 19:31:57 [INFO] backend/local: starting Apply operation
+2019/08/20 19:31:57 [TRACE] backend/local: requesting state manager for workspace "default"
+2019/08/20 19:31:57 [TRACE] backend/local: state manager for workspace "default" will:
+ - read initial snapshot from terraform.tfstate
+ - write new snapshots to terraform.tfstate
+ - create any backup at terraform.tfstate.backup
+2019/08/20 19:31:57 [TRACE] backend/local: requesting state lock for workspace "default"
+2019/08/20 19:31:57 [TRACE] statemgr.Filesystem: preparing to manage state snapshots at terraform.tfstate
+2019/08/20 19:31:57 [TRACE] statemgr.Filesystem: existing snapshot has lineage "afa19e82-11c5-7254-eb55-847eaa23c025" serial 13
+2019/08/20 19:31:57 [TRACE] statemgr.Filesystem: locking terraform.tfstate using fcntl flock
+2019/08/20 19:31:57 [TRACE] statemgr.Filesystem: writing lock metadata to .terraform.tfstate.lock.info
+2019/08/20 19:31:57 [TRACE] backend/local: reading remote state for workspace "default"
+2019/08/20 19:31:57 [TRACE] statemgr.Filesystem: reading latest snapshot from terraform.tfstate
+2019/08/20 19:31:57 [TRACE] statemgr.Filesystem: read snapshot with lineage "afa19e82-11c5-7254-eb55-847eaa23c025" serial 13
+2019/08/20 19:31:57 [TRACE] backend/local: retrieving local state snapshot for workspace "default"
+2019/08/20 19:31:57 [TRACE] backend/local: building context for current working directory
+2019/08/20 19:31:57 [TRACE] terraform.NewContext: starting
+2019/08/20 19:31:57 [TRACE] terraform.NewContext: resolving provider version selections
+2019/08/20 19:31:57 [TRACE] terraform.NewContext: loading provider schemas
+2019/08/20 19:31:57 [TRACE] LoadSchemas: retrieving schema for provider type "vsphere"
+2019-08-20T19:31:57.782-0700 [INFO]  plugin: configuring client automatic mTLS
+2019-08-20T19:31:57.822-0700 [DEBUG] plugin: starting plugin: path=/home/john/terraform-ansible-test-scripts/.terraform/plugins/linux_amd64/terraform-provider-vsphere_v1.12.0_x4 args=[/home/john/terraform-ansible-test-scripts/.terraform/plugins/linux_amd64/terraform-provider-vsphere_v1.12.0_x4]
+2019-08-20T19:31:57.823-0700 [DEBUG] plugin: plugin started: path=/home/john/terraform-ansible-test-scripts/.terraform/plugins/linux_amd64/terraform-provider-vsphere_v1.12.0_x4 pid=5250
+2019-08-20T19:31:57.823-0700 [DEBUG] plugin: waiting for RPC address: path=/home/john/terraform-ansible-test-scripts/.terraform/plugins/linux_amd64/terraform-provider-vsphere_v1.12.0_x4
+2019-08-20T19:31:57.837-0700 [INFO]  plugin.terraform-provider-vsphere_v1.12.0_x4: configuring server automatic mTLS: timestamp=2019-08-20T19:31:57.837-0700
+2019-08-20T19:31:57.877-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: plugin address: network=unix address=/tmp/plugin727043943 timestamp=2019-08-20T19:31:57.877-0700
+2019-08-20T19:31:57.877-0700 [DEBUG] plugin: using plugin: version=5
+2019/08/20 19:31:57 [TRACE] GRPCProvider: GetSchema
+2019/08/20 19:31:57 [TRACE] GRPCProvider: Close
+2019-08-20T19:31:57.988-0700 [DEBUG] plugin: plugin process exited: path=/home/john/terraform-ansible-test-scripts/.terraform/plugins/linux_amd64/terraform-provider-vsphere_v1.12.0_x4 pid=5250
+2019-08-20T19:31:57.988-0700 [DEBUG] plugin: plugin exited
+2019/08/20 19:31:57 [TRACE] LoadSchemas: retrieving schema for provisioner "remote-exec"
+2019-08-20T19:31:57.988-0700 [DEBUG] plugin: starting plugin: path=/usr/local/bin/terraform args=[/usr/local/bin/terraform, internal-plugin, provisioner, remote-exec]
+2019-08-20T19:31:57.989-0700 [DEBUG] plugin: plugin started: path=/usr/local/bin/terraform pid=5261
+2019-08-20T19:31:57.989-0700 [DEBUG] plugin: waiting for RPC address: path=/usr/local/bin/terraform
+2019-08-20T19:31:57.999-0700 [DEBUG] plugin.terraform: 2019/08/20 19:31:57 [INFO] Terraform version: 0.12.6  
+2019-08-20T19:31:57.999-0700 [DEBUG] plugin.terraform: 2019/08/20 19:31:57 [INFO] Go runtime version: go1.12.4
+2019-08-20T19:31:57.999-0700 [DEBUG] plugin.terraform: 2019/08/20 19:31:57 [INFO] CLI args: []string{"/usr/local/bin/terraform", "internal-plugin", "provisioner", "remote-exec"}
+2019-08-20T19:31:57.999-0700 [DEBUG] plugin.terraform: 2019/08/20 19:31:57 [DEBUG] Attempting to open CLI config file: /home/john/.terraformrc
+2019-08-20T19:31:58.000-0700 [DEBUG] plugin.terraform: 2019/08/20 19:31:57 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2019-08-20T19:31:58.001-0700 [DEBUG] plugin.terraform: 2019/08/20 19:31:58 [INFO] CLI command args: []string{"internal-plugin", "provisioner", "remote-exec"}
+2019-08-20T19:31:58.001-0700 [DEBUG] plugin.terraform: remote-exec-provisioner (internal) 2019/08/20 19:31:58 [INFO] Starting provisioner plugin remote-exec
+2019-08-20T19:31:58.001-0700 [DEBUG] plugin: using plugin: version=5
+2019-08-20T19:31:58.001-0700 [DEBUG] plugin.terraform: plugin address: address=/tmp/plugin333284101 network=unix timestamp=2019-08-20T19:31:58.001-0700
+2019-08-20T19:31:58.003-0700 [DEBUG] plugin: plugin process exited: path=/usr/local/bin/terraform pid=5261
+2019-08-20T19:31:58.003-0700 [DEBUG] plugin: plugin exited
+2019/08/20 19:31:58 [TRACE] LoadSchemas: retrieving schema for provisioner "local-exec"
+2019-08-20T19:31:58.003-0700 [DEBUG] plugin: starting plugin: path=/usr/local/bin/terraform args=[/usr/local/bin/terraform, internal-plugin, provisioner, local-exec]
+2019-08-20T19:31:58.004-0700 [DEBUG] plugin: plugin started: path=/usr/local/bin/terraform pid=5269
+2019-08-20T19:31:58.004-0700 [DEBUG] plugin: waiting for RPC address: path=/usr/local/bin/terraform
+2019-08-20T19:31:58.014-0700 [DEBUG] plugin.terraform: 2019/08/20 19:31:58 [INFO] Terraform version: 0.12.6  
+2019-08-20T19:31:58.014-0700 [DEBUG] plugin.terraform: 2019/08/20 19:31:58 [INFO] Go runtime version: go1.12.4
+2019-08-20T19:31:58.014-0700 [DEBUG] plugin.terraform: 2019/08/20 19:31:58 [INFO] CLI args: []string{"/usr/local/bin/terraform", "internal-plugin", "provisioner", "local-exec"}
+2019-08-20T19:31:58.014-0700 [DEBUG] plugin.terraform: 2019/08/20 19:31:58 [DEBUG] Attempting to open CLI config file: /home/john/.terraformrc
+2019-08-20T19:31:58.014-0700 [DEBUG] plugin.terraform: 2019/08/20 19:31:58 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2019-08-20T19:31:58.015-0700 [DEBUG] plugin.terraform: 2019/08/20 19:31:58 [INFO] CLI command args: []string{"internal-plugin", "provisioner", "local-exec"}
+2019-08-20T19:31:58.016-0700 [DEBUG] plugin.terraform: local-exec-provisioner (internal) 2019/08/20 19:31:58 [INFO] Starting provisioner plugin local-exec
+2019-08-20T19:31:58.016-0700 [DEBUG] plugin: using plugin: version=5
+2019-08-20T19:31:58.016-0700 [DEBUG] plugin.terraform: plugin address: address=/tmp/plugin220893993 network=unix timestamp=2019-08-20T19:31:58.016-0700
+2019-08-20T19:31:58.018-0700 [DEBUG] plugin: plugin process exited: path=/usr/local/bin/terraform pid=5269
+2019-08-20T19:31:58.018-0700 [DEBUG] plugin: plugin exited
+2019/08/20 19:31:58 [TRACE] terraform.NewContext: complete
+2019/08/20 19:31:58 [TRACE] backend/local: finished building terraform.Context
+2019/08/20 19:31:58 [TRACE] backend/local: requesting interactive input, if necessary
+2019/08/20 19:31:58 [TRACE] Context.Input: Prompting for variables
+2019/08/20 19:31:58 [TRACE] Context.Input: Prompting for provider arguments
+2019/08/20 19:31:58 [TRACE] Context.Input: Provider provider.vsphere declared at vsphere_terraform.tf:1,1-19
+2019/08/20 19:31:58 [TRACE] Context.Input: Input for provider.vsphere: map[string]cty.Value{}
+2019/08/20 19:31:58 [TRACE] backend/local: running validation operation
+2019/08/20 19:31:58 [INFO] terraform: building graph: GraphTypeValidate
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.ConfigTransformer
+2019/08/20 19:31:58 [TRACE] ConfigTransformer: Starting for path: 
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.ConfigTransformer with new graph:
+data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+data.vsphere_datastore.datastore - *terraform.NodeValidatableResource
+data.vsphere_network.network - *terraform.NodeValidatableResource
+data.vsphere_resource_pool.pool - *terraform.NodeValidatableResource
+data.vsphere_virtual_machine.template - *terraform.NodeValidatableResource
+vsphere_virtual_machine.vm - *terraform.NodeValidatableResource
+vsphere_virtual_machine.vm2 - *terraform.NodeValidatableResource
+------
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.LocalTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.LocalTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.OutputTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.OutputTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.OrphanResourceInstanceTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.OrphanResourceInstanceTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.StateTransformer
+2019/08/20 19:31:58 [TRACE] StateTransformer: creating nodes for deposed instance objects only
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.StateTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.OrphanOutputTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.OrphanOutputTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.AttachResourceConfigTransformer
+2019/08/20 19:31:58 [TRACE] AttachResourceConfigTransformer: attaching to "data.vsphere_network.network" (*terraform.NodeValidatableResource) config from hcl.Range{Filename:"vsphere_terraform.tf", Start:hcl.Pos{Line:23, Column:1, Byte:449}, End:hcl.Pos{Line:23, Column:33, Byte:481}}
+2019/08/20 19:31:58 [TRACE] AttachResourceConfigTransformer: attaching to "vsphere_virtual_machine.vm2" (*terraform.NodeValidatableResource) config from vsphere_terraform.tf:33,1-41
+2019/08/20 19:31:58 [TRACE] AttachResourceConfigTransformer: attaching to "vsphere_virtual_machine.vm" (*terraform.NodeValidatableResource) config from vsphere_terraform.tf:81,1-40
+2019/08/20 19:31:58 [TRACE] AttachResourceConfigTransformer: attaching to "data.vsphere_virtual_machine.template" (*terraform.NodeValidatableResource) config from hcl.Range{Filename:"vsphere_terraform.tf", Start:hcl.Pos{Line:28, Column:1, Byte:560}, End:hcl.Pos{Line:28, Column:42, Byte:601}}
+2019/08/20 19:31:58 [TRACE] AttachResourceConfigTransformer: attaching to "data.vsphere_datacenter.dc" (*terraform.NodeValidatableResource) config from hcl.Range{Filename:"vsphere_terraform.tf", Start:hcl.Pos{Line:9, Column:1, Byte:164}, End:hcl.Pos{Line:9, Column:31, Byte:194}}
+2019/08/20 19:31:58 [TRACE] AttachResourceConfigTransformer: attaching to "data.vsphere_datastore.datastore" (*terraform.NodeValidatableResource) config from hcl.Range{Filename:"vsphere_terraform.tf", Start:hcl.Pos{Line:13, Column:1, Byte:221}, End:hcl.Pos{Line:13, Column:37, Byte:257}}
+2019/08/20 19:31:58 [TRACE] AttachResourceConfigTransformer: attaching to "data.vsphere_resource_pool.pool" (*terraform.NodeValidatableResource) config from hcl.Range{Filename:"vsphere_terraform.tf", Start:hcl.Pos{Line:18, Column:1, Byte:336}, End:hcl.Pos{Line:18, Column:36, Byte:371}}
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.AttachResourceConfigTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.RootVariableTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.RootVariableTransformer with new graph:
+data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+data.vsphere_datastore.datastore - *terraform.NodeValidatableResource
+data.vsphere_network.network - *terraform.NodeValidatableResource
+data.vsphere_resource_pool.pool - *terraform.NodeValidatableResource
+data.vsphere_virtual_machine.template - *terraform.NodeValidatableResource
+var.disk_size - *terraform.NodeRootVariable
+var.dns_server_list - *terraform.NodeRootVariable
+var.guest_id - *terraform.NodeRootVariable
+var.memory - *terraform.NodeRootVariable
+var.num_cpus - *terraform.NodeRootVariable
+var.ssh_password - *terraform.NodeRootVariable
+var.template_name - *terraform.NodeRootVariable
+var.vm_domain - *terraform.NodeRootVariable
+var.vm_gateway - *terraform.NodeRootVariable
+var.vm_hostname - *terraform.NodeRootVariable
+var.vm_ip - *terraform.NodeRootVariable
+var.vm_name - *terraform.NodeRootVariable
+var.vm_netmask - *terraform.NodeRootVariable
+var.vm_time_zone - *terraform.NodeRootVariable
+var.vsphere_password - *terraform.NodeRootVariable
+var.vsphere_server - *terraform.NodeRootVariable
+var.vsphere_user - *terraform.NodeRootVariable
+vsphere_virtual_machine.vm - *terraform.NodeValidatableResource
+vsphere_virtual_machine.vm2 - *terraform.NodeValidatableResource
+------
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.MissingProvisionerTransformer
+2019/08/20 19:31:58 [TRACE] MissingProviderTransformer: added implicit provisioner .remote-exec, first implied by vsphere_virtual_machine.vm
+2019/08/20 19:31:58 [TRACE] MissingProviderTransformer: added implicit provisioner .local-exec, first implied by vsphere_virtual_machine.vm
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.MissingProvisionerTransformer with new graph:
+data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+data.vsphere_datastore.datastore - *terraform.NodeValidatableResource
+data.vsphere_network.network - *terraform.NodeValidatableResource
+data.vsphere_resource_pool.pool - *terraform.NodeValidatableResource
+data.vsphere_virtual_machine.template - *terraform.NodeValidatableResource
+provisioner.local-exec - *terraform.NodeProvisioner
+provisioner.remote-exec - *terraform.NodeProvisioner
+var.disk_size - *terraform.NodeRootVariable
+var.dns_server_list - *terraform.NodeRootVariable
+var.guest_id - *terraform.NodeRootVariable
+var.memory - *terraform.NodeRootVariable
+var.num_cpus - *terraform.NodeRootVariable
+var.ssh_password - *terraform.NodeRootVariable
+var.template_name - *terraform.NodeRootVariable
+var.vm_domain - *terraform.NodeRootVariable
+var.vm_gateway - *terraform.NodeRootVariable
+var.vm_hostname - *terraform.NodeRootVariable
+var.vm_ip - *terraform.NodeRootVariable
+var.vm_name - *terraform.NodeRootVariable
+var.vm_netmask - *terraform.NodeRootVariable
+var.vm_time_zone - *terraform.NodeRootVariable
+var.vsphere_password - *terraform.NodeRootVariable
+var.vsphere_server - *terraform.NodeRootVariable
+var.vsphere_user - *terraform.NodeRootVariable
+vsphere_virtual_machine.vm - *terraform.NodeValidatableResource
+vsphere_virtual_machine.vm2 - *terraform.NodeValidatableResource
+------
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.ProvisionerTransformer
+2019/08/20 19:31:58 [TRACE] ProvisionerTransformer: vsphere_virtual_machine.vm is provisioned by .remote-exec ("provisioner.remote-exec")
+2019/08/20 19:31:58 [TRACE] ProvisionerTransformer: vsphere_virtual_machine.vm is provisioned by .local-exec ("provisioner.local-exec")
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.ProvisionerTransformer with new graph:
+data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+data.vsphere_datastore.datastore - *terraform.NodeValidatableResource
+data.vsphere_network.network - *terraform.NodeValidatableResource
+data.vsphere_resource_pool.pool - *terraform.NodeValidatableResource
+data.vsphere_virtual_machine.template - *terraform.NodeValidatableResource
+provisioner.local-exec - *terraform.NodeProvisioner
+provisioner.remote-exec - *terraform.NodeProvisioner
+var.disk_size - *terraform.NodeRootVariable
+var.dns_server_list - *terraform.NodeRootVariable
+var.guest_id - *terraform.NodeRootVariable
+var.memory - *terraform.NodeRootVariable
+var.num_cpus - *terraform.NodeRootVariable
+var.ssh_password - *terraform.NodeRootVariable
+var.template_name - *terraform.NodeRootVariable
+var.vm_domain - *terraform.NodeRootVariable
+var.vm_gateway - *terraform.NodeRootVariable
+var.vm_hostname - *terraform.NodeRootVariable
+var.vm_ip - *terraform.NodeRootVariable
+var.vm_name - *terraform.NodeRootVariable
+var.vm_netmask - *terraform.NodeRootVariable
+var.vm_time_zone - *terraform.NodeRootVariable
+var.vsphere_password - *terraform.NodeRootVariable
+var.vsphere_server - *terraform.NodeRootVariable
+var.vsphere_user - *terraform.NodeRootVariable
+vsphere_virtual_machine.vm - *terraform.NodeValidatableResource
+  provisioner.local-exec - *terraform.NodeProvisioner
+  provisioner.remote-exec - *terraform.NodeProvisioner
+vsphere_virtual_machine.vm2 - *terraform.NodeValidatableResource
+------
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.ModuleVariableTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.ModuleVariableTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.graphTransformerMulti
+2019/08/20 19:31:58 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderConfigTransformer
+2019/08/20 19:31:58 [TRACE] ProviderConfigTransformer: attaching to "provider.vsphere" provider configuration from vsphere_terraform.tf:1,1-19
+2019/08/20 19:31:58 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderConfigTransformer with new graph:
+data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+data.vsphere_datastore.datastore - *terraform.NodeValidatableResource
+data.vsphere_network.network - *terraform.NodeValidatableResource
+data.vsphere_resource_pool.pool - *terraform.NodeValidatableResource
+data.vsphere_virtual_machine.template - *terraform.NodeValidatableResource
+provider.vsphere - *terraform.NodeApplyableProvider
+provisioner.local-exec - *terraform.NodeProvisioner
+provisioner.remote-exec - *terraform.NodeProvisioner
+var.disk_size - *terraform.NodeRootVariable
+var.dns_server_list - *terraform.NodeRootVariable
+var.guest_id - *terraform.NodeRootVariable
+var.memory - *terraform.NodeRootVariable
+var.num_cpus - *terraform.NodeRootVariable
+var.ssh_password - *terraform.NodeRootVariable
+var.template_name - *terraform.NodeRootVariable
+var.vm_domain - *terraform.NodeRootVariable
+var.vm_gateway - *terraform.NodeRootVariable
+var.vm_hostname - *terraform.NodeRootVariable
+var.vm_ip - *terraform.NodeRootVariable
+var.vm_name - *terraform.NodeRootVariable
+var.vm_netmask - *terraform.NodeRootVariable
+var.vm_time_zone - *terraform.NodeRootVariable
+var.vsphere_password - *terraform.NodeRootVariable
+var.vsphere_server - *terraform.NodeRootVariable
+var.vsphere_user - *terraform.NodeRootVariable
+vsphere_virtual_machine.vm - *terraform.NodeValidatableResource
+  provisioner.local-exec - *terraform.NodeProvisioner
+  provisioner.remote-exec - *terraform.NodeProvisioner
+vsphere_virtual_machine.vm2 - *terraform.NodeValidatableResource
+------
+2019/08/20 19:31:58 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.MissingProviderTransformer
+2019/08/20 19:31:58 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.MissingProviderTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderTransformer
+2019/08/20 19:31:58 [TRACE] ProviderTransformer: data.vsphere_datastore.datastore is provided by provider.vsphere or inherited equivalent
+2019/08/20 19:31:58 [TRACE] ProviderTransformer: data.vsphere_resource_pool.pool is provided by provider.vsphere or inherited equivalent
+2019/08/20 19:31:58 [TRACE] ProviderTransformer: vsphere_virtual_machine.vm is provided by provider.vsphere or inherited equivalent
+2019/08/20 19:31:58 [TRACE] ProviderTransformer: data.vsphere_datacenter.dc is provided by provider.vsphere or inherited equivalent
+2019/08/20 19:31:58 [TRACE] ProviderTransformer: vsphere_virtual_machine.vm2 is provided by provider.vsphere or inherited equivalent
+2019/08/20 19:31:58 [TRACE] ProviderTransformer: data.vsphere_network.network is provided by provider.vsphere or inherited equivalent
+2019/08/20 19:31:58 [TRACE] ProviderTransformer: data.vsphere_virtual_machine.template is provided by provider.vsphere or inherited equivalent
+2019/08/20 19:31:58 [TRACE] ProviderTransformer: exact match for provider.vsphere serving data.vsphere_virtual_machine.template
+2019/08/20 19:31:58 [DEBUG] ProviderTransformer: "data.vsphere_virtual_machine.template" (*terraform.NodeValidatableResource) needs provider.vsphere
+2019/08/20 19:31:58 [TRACE] ProviderTransformer: exact match for provider.vsphere serving data.vsphere_datastore.datastore
+2019/08/20 19:31:58 [DEBUG] ProviderTransformer: "data.vsphere_datastore.datastore" (*terraform.NodeValidatableResource) needs provider.vsphere
+2019/08/20 19:31:58 [TRACE] ProviderTransformer: exact match for provider.vsphere serving data.vsphere_resource_pool.pool
+2019/08/20 19:31:58 [DEBUG] ProviderTransformer: "data.vsphere_resource_pool.pool" (*terraform.NodeValidatableResource) needs provider.vsphere
+2019/08/20 19:31:58 [TRACE] ProviderTransformer: exact match for provider.vsphere serving vsphere_virtual_machine.vm
+2019/08/20 19:31:58 [DEBUG] ProviderTransformer: "vsphere_virtual_machine.vm" (*terraform.NodeValidatableResource) needs provider.vsphere
+2019/08/20 19:31:58 [TRACE] ProviderTransformer: exact match for provider.vsphere serving data.vsphere_datacenter.dc
+2019/08/20 19:31:58 [DEBUG] ProviderTransformer: "data.vsphere_datacenter.dc" (*terraform.NodeValidatableResource) needs provider.vsphere
+2019/08/20 19:31:58 [TRACE] ProviderTransformer: exact match for provider.vsphere serving vsphere_virtual_machine.vm2
+2019/08/20 19:31:58 [DEBUG] ProviderTransformer: "vsphere_virtual_machine.vm2" (*terraform.NodeValidatableResource) needs provider.vsphere
+2019/08/20 19:31:58 [TRACE] ProviderTransformer: exact match for provider.vsphere serving data.vsphere_network.network
+2019/08/20 19:31:58 [DEBUG] ProviderTransformer: "data.vsphere_network.network" (*terraform.NodeValidatableResource) needs provider.vsphere
+2019/08/20 19:31:58 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderTransformer with new graph:
+data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_datastore.datastore - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_network.network - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_resource_pool.pool - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_virtual_machine.template - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+provider.vsphere - *terraform.NodeApplyableProvider
+provisioner.local-exec - *terraform.NodeProvisioner
+provisioner.remote-exec - *terraform.NodeProvisioner
+var.disk_size - *terraform.NodeRootVariable
+var.dns_server_list - *terraform.NodeRootVariable
+var.guest_id - *terraform.NodeRootVariable
+var.memory - *terraform.NodeRootVariable
+var.num_cpus - *terraform.NodeRootVariable
+var.ssh_password - *terraform.NodeRootVariable
+var.template_name - *terraform.NodeRootVariable
+var.vm_domain - *terraform.NodeRootVariable
+var.vm_gateway - *terraform.NodeRootVariable
+var.vm_hostname - *terraform.NodeRootVariable
+var.vm_ip - *terraform.NodeRootVariable
+var.vm_name - *terraform.NodeRootVariable
+var.vm_netmask - *terraform.NodeRootVariable
+var.vm_time_zone - *terraform.NodeRootVariable
+var.vsphere_password - *terraform.NodeRootVariable
+var.vsphere_server - *terraform.NodeRootVariable
+var.vsphere_user - *terraform.NodeRootVariable
+vsphere_virtual_machine.vm - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+  provisioner.local-exec - *terraform.NodeProvisioner
+  provisioner.remote-exec - *terraform.NodeProvisioner
+vsphere_virtual_machine.vm2 - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+------
+2019/08/20 19:31:58 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.PruneProviderTransformer
+2019/08/20 19:31:58 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.PruneProviderTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ParentProviderTransformer
+2019/08/20 19:31:58 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ParentProviderTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.graphTransformerMulti with new graph:
+data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_datastore.datastore - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_network.network - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_resource_pool.pool - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_virtual_machine.template - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+provider.vsphere - *terraform.NodeApplyableProvider
+provisioner.local-exec - *terraform.NodeProvisioner
+provisioner.remote-exec - *terraform.NodeProvisioner
+var.disk_size - *terraform.NodeRootVariable
+var.dns_server_list - *terraform.NodeRootVariable
+var.guest_id - *terraform.NodeRootVariable
+var.memory - *terraform.NodeRootVariable
+var.num_cpus - *terraform.NodeRootVariable
+var.ssh_password - *terraform.NodeRootVariable
+var.template_name - *terraform.NodeRootVariable
+var.vm_domain - *terraform.NodeRootVariable
+var.vm_gateway - *terraform.NodeRootVariable
+var.vm_hostname - *terraform.NodeRootVariable
+var.vm_ip - *terraform.NodeRootVariable
+var.vm_name - *terraform.NodeRootVariable
+var.vm_netmask - *terraform.NodeRootVariable
+var.vm_time_zone - *terraform.NodeRootVariable
+var.vsphere_password - *terraform.NodeRootVariable
+var.vsphere_server - *terraform.NodeRootVariable
+var.vsphere_user - *terraform.NodeRootVariable
+vsphere_virtual_machine.vm - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+  provisioner.local-exec - *terraform.NodeProvisioner
+  provisioner.remote-exec - *terraform.NodeProvisioner
+vsphere_virtual_machine.vm2 - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+------
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.RemovedModuleTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.RemovedModuleTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.AttachSchemaTransformer
+2019/08/20 19:31:58 [TRACE] AttachSchemaTransformer: attaching resource schema to data.vsphere_virtual_machine.template
+2019/08/20 19:31:58 [TRACE] AttachSchemaTransformer: attaching provider config schema to provider.vsphere
+2019/08/20 19:31:58 [TRACE] AttachSchemaTransformer: attaching resource schema to data.vsphere_datastore.datastore
+2019/08/20 19:31:58 [TRACE] AttachSchemaTransformer: attaching resource schema to data.vsphere_resource_pool.pool
+2019/08/20 19:31:58 [TRACE] AttachSchemaTransformer: attaching resource schema to vsphere_virtual_machine.vm
+2019/08/20 19:31:58 [TRACE] AttachSchemaTransformer: attaching provisioner "remote-exec" config schema to vsphere_virtual_machine.vm
+2019/08/20 19:31:58 [TRACE] AttachSchemaTransformer: attaching provisioner "local-exec" config schema to vsphere_virtual_machine.vm
+2019/08/20 19:31:58 [TRACE] AttachSchemaTransformer: attaching resource schema to data.vsphere_datacenter.dc
+2019/08/20 19:31:58 [TRACE] AttachSchemaTransformer: attaching resource schema to vsphere_virtual_machine.vm2
+2019/08/20 19:31:58 [TRACE] AttachSchemaTransformer: attaching resource schema to data.vsphere_network.network
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.AttachSchemaTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "var.guest_id" references: []
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "var.vm_ip" references: []
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "provisioner.local-exec" references: []
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "data.vsphere_virtual_machine.template" references: [var.template_name data.vsphere_datacenter.dc]
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "var.vm_time_zone" references: []
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "var.template_name" references: []
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "var.vsphere_password" references: []
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "var.vm_name" references: []
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "var.vm_hostname" references: []
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "var.num_cpus" references: []
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "var.vm_domain" references: []
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "var.ssh_password" references: []
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "provider.vsphere" references: [var.vsphere_password var.vsphere_user var.vsphere_server]
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "data.vsphere_datastore.datastore" references: [data.vsphere_datacenter.dc]
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "data.vsphere_resource_pool.pool" references: [data.vsphere_datacenter.dc]
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "var.dns_server_list" references: []
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "var.vsphere_user" references: []
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "var.memory" references: []
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "var.vm_netmask" references: []
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "var.vsphere_server" references: []
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "vsphere_virtual_machine.vm" references: [var.guest_id var.vm_name data.vsphere_datastore.datastore var.num_cpus var.memory data.vsphere_resource_pool.pool data.vsphere_network.network var.disk_size data.vsphere_virtual_machine.template var.vm_gateway var.dns_server_list var.vm_hostname var.vm_time_zone var.vm_domain var.vm_ip var.vm_netmask var.ssh_password var.vm_ip]
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "data.vsphere_datacenter.dc" references: []
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "var.vm_gateway" references: []
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "vsphere_virtual_machine.vm2" references: [data.vsphere_datastore.datastore var.memory var.guest_id data.vsphere_resource_pool.pool var.vm_name var.num_cpus data.vsphere_network.network var.disk_size data.vsphere_virtual_machine.template var.dns_server_list var.vm_gateway var.vm_time_zone var.vm_domain var.vm_hostname var.vm_netmask]
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "data.vsphere_network.network" references: [data.vsphere_datacenter.dc]
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "var.disk_size" references: []
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "provisioner.remote-exec" references: []
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.ReferenceTransformer with new graph:
+data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_datastore.datastore - *terraform.NodeValidatableResource
+  data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_network.network - *terraform.NodeValidatableResource
+  data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_resource_pool.pool - *terraform.NodeValidatableResource
+  data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_virtual_machine.template - *terraform.NodeValidatableResource
+  data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+  var.template_name - *terraform.NodeRootVariable
+provider.vsphere - *terraform.NodeApplyableProvider
+  var.vsphere_password - *terraform.NodeRootVariable
+  var.vsphere_server - *terraform.NodeRootVariable
+  var.vsphere_user - *terraform.NodeRootVariable
+provisioner.local-exec - *terraform.NodeProvisioner
+provisioner.remote-exec - *terraform.NodeProvisioner
+var.disk_size - *terraform.NodeRootVariable
+var.dns_server_list - *terraform.NodeRootVariable
+var.guest_id - *terraform.NodeRootVariable
+var.memory - *terraform.NodeRootVariable
+var.num_cpus - *terraform.NodeRootVariable
+var.ssh_password - *terraform.NodeRootVariable
+var.template_name - *terraform.NodeRootVariable
+var.vm_domain - *terraform.NodeRootVariable
+var.vm_gateway - *terraform.NodeRootVariable
+var.vm_hostname - *terraform.NodeRootVariable
+var.vm_ip - *terraform.NodeRootVariable
+var.vm_name - *terraform.NodeRootVariable
+var.vm_netmask - *terraform.NodeRootVariable
+var.vm_time_zone - *terraform.NodeRootVariable
+var.vsphere_password - *terraform.NodeRootVariable
+var.vsphere_server - *terraform.NodeRootVariable
+var.vsphere_user - *terraform.NodeRootVariable
+vsphere_virtual_machine.vm - *terraform.NodeValidatableResource
+  data.vsphere_datastore.datastore - *terraform.NodeValidatableResource
+  data.vsphere_network.network - *terraform.NodeValidatableResource
+  data.vsphere_resource_pool.pool - *terraform.NodeValidatableResource
+  data.vsphere_virtual_machine.template - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+  provisioner.local-exec - *terraform.NodeProvisioner
+  provisioner.remote-exec - *terraform.NodeProvisioner
+  var.disk_size - *terraform.NodeRootVariable
+  var.dns_server_list - *terraform.NodeRootVariable
+  var.guest_id - *terraform.NodeRootVariable
+  var.memory - *terraform.NodeRootVariable
+  var.num_cpus - *terraform.NodeRootVariable
+  var.ssh_password - *terraform.NodeRootVariable
+  var.vm_domain - *terraform.NodeRootVariable
+  var.vm_gateway - *terraform.NodeRootVariable
+  var.vm_hostname - *terraform.NodeRootVariable
+  var.vm_ip - *terraform.NodeRootVariable
+  var.vm_name - *terraform.NodeRootVariable
+  var.vm_netmask - *terraform.NodeRootVariable
+  var.vm_time_zone - *terraform.NodeRootVariable
+vsphere_virtual_machine.vm2 - *terraform.NodeValidatableResource
+  data.vsphere_datastore.datastore - *terraform.NodeValidatableResource
+  data.vsphere_network.network - *terraform.NodeValidatableResource
+  data.vsphere_resource_pool.pool - *terraform.NodeValidatableResource
+  data.vsphere_virtual_machine.template - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+  var.disk_size - *terraform.NodeRootVariable
+  var.dns_server_list - *terraform.NodeRootVariable
+  var.guest_id - *terraform.NodeRootVariable
+  var.memory - *terraform.NodeRootVariable
+  var.num_cpus - *terraform.NodeRootVariable
+  var.vm_domain - *terraform.NodeRootVariable
+  var.vm_gateway - *terraform.NodeRootVariable
+  var.vm_hostname - *terraform.NodeRootVariable
+  var.vm_name - *terraform.NodeRootVariable
+  var.vm_netmask - *terraform.NodeRootVariable
+  var.vm_time_zone - *terraform.NodeRootVariable
+------
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.CountBoundaryTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.CountBoundaryTransformer with new graph:
+data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_datastore.datastore - *terraform.NodeValidatableResource
+  data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_network.network - *terraform.NodeValidatableResource
+  data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_resource_pool.pool - *terraform.NodeValidatableResource
+  data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_virtual_machine.template - *terraform.NodeValidatableResource
+  data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+  var.template_name - *terraform.NodeRootVariable
+meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+  data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+  data.vsphere_datastore.datastore - *terraform.NodeValidatableResource
+  data.vsphere_network.network - *terraform.NodeValidatableResource
+  data.vsphere_resource_pool.pool - *terraform.NodeValidatableResource
+  data.vsphere_virtual_machine.template - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+  provisioner.local-exec - *terraform.NodeProvisioner
+  provisioner.remote-exec - *terraform.NodeProvisioner
+  var.disk_size - *terraform.NodeRootVariable
+  var.dns_server_list - *terraform.NodeRootVariable
+  var.guest_id - *terraform.NodeRootVariable
+  var.memory - *terraform.NodeRootVariable
+  var.num_cpus - *terraform.NodeRootVariable
+  var.ssh_password - *terraform.NodeRootVariable
+  var.template_name - *terraform.NodeRootVariable
+  var.vm_domain - *terraform.NodeRootVariable
+  var.vm_gateway - *terraform.NodeRootVariable
+  var.vm_hostname - *terraform.NodeRootVariable
+  var.vm_ip - *terraform.NodeRootVariable
+  var.vm_name - *terraform.NodeRootVariable
+  var.vm_netmask - *terraform.NodeRootVariable
+  var.vm_time_zone - *terraform.NodeRootVariable
+  var.vsphere_password - *terraform.NodeRootVariable
+  var.vsphere_server - *terraform.NodeRootVariable
+  var.vsphere_user - *terraform.NodeRootVariable
+  vsphere_virtual_machine.vm - *terraform.NodeValidatableResource
+  vsphere_virtual_machine.vm2 - *terraform.NodeValidatableResource
+provider.vsphere - *terraform.NodeApplyableProvider
+  var.vsphere_password - *terraform.NodeRootVariable
+  var.vsphere_server - *terraform.NodeRootVariable
+  var.vsphere_user - *terraform.NodeRootVariable
+provisioner.local-exec - *terraform.NodeProvisioner
+provisioner.remote-exec - *terraform.NodeProvisioner
+var.disk_size - *terraform.NodeRootVariable
+var.dns_server_list - *terraform.NodeRootVariable
+var.guest_id - *terraform.NodeRootVariable
+var.memory - *terraform.NodeRootVariable
+var.num_cpus - *terraform.NodeRootVariable
+var.ssh_password - *terraform.NodeRootVariable
+var.template_name - *terraform.NodeRootVariable
+var.vm_domain - *terraform.NodeRootVariable
+var.vm_gateway - *terraform.NodeRootVariable
+var.vm_hostname - *terraform.NodeRootVariable
+var.vm_ip - *terraform.NodeRootVariable
+var.vm_name - *terraform.NodeRootVariable
+var.vm_netmask - *terraform.NodeRootVariable
+var.vm_time_zone - *terraform.NodeRootVariable
+var.vsphere_password - *terraform.NodeRootVariable
+var.vsphere_server - *terraform.NodeRootVariable
+var.vsphere_user - *terraform.NodeRootVariable
+vsphere_virtual_machine.vm - *terraform.NodeValidatableResource
+  data.vsphere_datastore.datastore - *terraform.NodeValidatableResource
+  data.vsphere_network.network - *terraform.NodeValidatableResource
+  data.vsphere_resource_pool.pool - *terraform.NodeValidatableResource
+  data.vsphere_virtual_machine.template - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+  provisioner.local-exec - *terraform.NodeProvisioner
+  provisioner.remote-exec - *terraform.NodeProvisioner
+  var.disk_size - *terraform.NodeRootVariable
+  var.dns_server_list - *terraform.NodeRootVariable
+  var.guest_id - *terraform.NodeRootVariable
+  var.memory - *terraform.NodeRootVariable
+  var.num_cpus - *terraform.NodeRootVariable
+  var.ssh_password - *terraform.NodeRootVariable
+  var.vm_domain - *terraform.NodeRootVariable
+  var.vm_gateway - *terraform.NodeRootVariable
+  var.vm_hostname - *terraform.NodeRootVariable
+  var.vm_ip - *terraform.NodeRootVariable
+  var.vm_name - *terraform.NodeRootVariable
+  var.vm_netmask - *terraform.NodeRootVariable
+  var.vm_time_zone - *terraform.NodeRootVariable
+vsphere_virtual_machine.vm2 - *terraform.NodeValidatableResource
+  data.vsphere_datastore.datastore - *terraform.NodeValidatableResource
+  data.vsphere_network.network - *terraform.NodeValidatableResource
+  data.vsphere_resource_pool.pool - *terraform.NodeValidatableResource
+  data.vsphere_virtual_machine.template - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+  var.disk_size - *terraform.NodeRootVariable
+  var.dns_server_list - *terraform.NodeRootVariable
+  var.guest_id - *terraform.NodeRootVariable
+  var.memory - *terraform.NodeRootVariable
+  var.num_cpus - *terraform.NodeRootVariable
+  var.vm_domain - *terraform.NodeRootVariable
+  var.vm_gateway - *terraform.NodeRootVariable
+  var.vm_hostname - *terraform.NodeRootVariable
+  var.vm_name - *terraform.NodeRootVariable
+  var.vm_netmask - *terraform.NodeRootVariable
+  var.vm_time_zone - *terraform.NodeRootVariable
+------
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.ForcedCBDTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.ForcedCBDTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.CloseProviderTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.CloseProviderTransformer with new graph:
+data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_datastore.datastore - *terraform.NodeValidatableResource
+  data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_network.network - *terraform.NodeValidatableResource
+  data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_resource_pool.pool - *terraform.NodeValidatableResource
+  data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_virtual_machine.template - *terraform.NodeValidatableResource
+  data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+  var.template_name - *terraform.NodeRootVariable
+meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+  data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+  data.vsphere_datastore.datastore - *terraform.NodeValidatableResource
+  data.vsphere_network.network - *terraform.NodeValidatableResource
+  data.vsphere_resource_pool.pool - *terraform.NodeValidatableResource
+  data.vsphere_virtual_machine.template - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+  provisioner.local-exec - *terraform.NodeProvisioner
+  provisioner.remote-exec - *terraform.NodeProvisioner
+  var.disk_size - *terraform.NodeRootVariable
+  var.dns_server_list - *terraform.NodeRootVariable
+  var.guest_id - *terraform.NodeRootVariable
+  var.memory - *terraform.NodeRootVariable
+  var.num_cpus - *terraform.NodeRootVariable
+  var.ssh_password - *terraform.NodeRootVariable
+  var.template_name - *terraform.NodeRootVariable
+  var.vm_domain - *terraform.NodeRootVariable
+  var.vm_gateway - *terraform.NodeRootVariable
+  var.vm_hostname - *terraform.NodeRootVariable
+  var.vm_ip - *terraform.NodeRootVariable
+  var.vm_name - *terraform.NodeRootVariable
+  var.vm_netmask - *terraform.NodeRootVariable
+  var.vm_time_zone - *terraform.NodeRootVariable
+  var.vsphere_password - *terraform.NodeRootVariable
+  var.vsphere_server - *terraform.NodeRootVariable
+  var.vsphere_user - *terraform.NodeRootVariable
+  vsphere_virtual_machine.vm - *terraform.NodeValidatableResource
+  vsphere_virtual_machine.vm2 - *terraform.NodeValidatableResource
+provider.vsphere - *terraform.NodeApplyableProvider
+  var.vsphere_password - *terraform.NodeRootVariable
+  var.vsphere_server - *terraform.NodeRootVariable
+  var.vsphere_user - *terraform.NodeRootVariable
+provider.vsphere (close) - *terraform.graphNodeCloseProvider
+  data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+  data.vsphere_datastore.datastore - *terraform.NodeValidatableResource
+  data.vsphere_network.network - *terraform.NodeValidatableResource
+  data.vsphere_resource_pool.pool - *terraform.NodeValidatableResource
+  data.vsphere_virtual_machine.template - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+  vsphere_virtual_machine.vm - *terraform.NodeValidatableResource
+  vsphere_virtual_machine.vm2 - *terraform.NodeValidatableResource
+provisioner.local-exec - *terraform.NodeProvisioner
+provisioner.remote-exec - *terraform.NodeProvisioner
+var.disk_size - *terraform.NodeRootVariable
+var.dns_server_list - *terraform.NodeRootVariable
+var.guest_id - *terraform.NodeRootVariable
+var.memory - *terraform.NodeRootVariable
+var.num_cpus - *terraform.NodeRootVariable
+var.ssh_password - *terraform.NodeRootVariable
+var.template_name - *terraform.NodeRootVariable
+var.vm_domain - *terraform.NodeRootVariable
+var.vm_gateway - *terraform.NodeRootVariable
+var.vm_hostname - *terraform.NodeRootVariable
+var.vm_ip - *terraform.NodeRootVariable
+var.vm_name - *terraform.NodeRootVariable
+var.vm_netmask - *terraform.NodeRootVariable
+var.vm_time_zone - *terraform.NodeRootVariable
+var.vsphere_password - *terraform.NodeRootVariable
+var.vsphere_server - *terraform.NodeRootVariable
+var.vsphere_user - *terraform.NodeRootVariable
+vsphere_virtual_machine.vm - *terraform.NodeValidatableResource
+  data.vsphere_datastore.datastore - *terraform.NodeValidatableResource
+  data.vsphere_network.network - *terraform.NodeValidatableResource
+  data.vsphere_resource_pool.pool - *terraform.NodeValidatableResource
+  data.vsphere_virtual_machine.template - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+  provisioner.local-exec - *terraform.NodeProvisioner
+  provisioner.remote-exec - *terraform.NodeProvisioner
+  var.disk_size - *terraform.NodeRootVariable
+  var.dns_server_list - *terraform.NodeRootVariable
+  var.guest_id - *terraform.NodeRootVariable
+  var.memory - *terraform.NodeRootVariable
+  var.num_cpus - *terraform.NodeRootVariable
+  var.ssh_password - *terraform.NodeRootVariable
+  var.vm_domain - *terraform.NodeRootVariable
+  var.vm_gateway - *terraform.NodeRootVariable
+  var.vm_hostname - *terraform.NodeRootVariable
+  var.vm_ip - *terraform.NodeRootVariable
+  var.vm_name - *terraform.NodeRootVariable
+  var.vm_netmask - *terraform.NodeRootVariable
+  var.vm_time_zone - *terraform.NodeRootVariable
+vsphere_virtual_machine.vm2 - *terraform.NodeValidatableResource
+  data.vsphere_datastore.datastore - *terraform.NodeValidatableResource
+  data.vsphere_network.network - *terraform.NodeValidatableResource
+  data.vsphere_resource_pool.pool - *terraform.NodeValidatableResource
+  data.vsphere_virtual_machine.template - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+  var.disk_size - *terraform.NodeRootVariable
+  var.dns_server_list - *terraform.NodeRootVariable
+  var.guest_id - *terraform.NodeRootVariable
+  var.memory - *terraform.NodeRootVariable
+  var.num_cpus - *terraform.NodeRootVariable
+  var.vm_domain - *terraform.NodeRootVariable
+  var.vm_gateway - *terraform.NodeRootVariable
+  var.vm_hostname - *terraform.NodeRootVariable
+  var.vm_name - *terraform.NodeRootVariable
+  var.vm_netmask - *terraform.NodeRootVariable
+  var.vm_time_zone - *terraform.NodeRootVariable
+------
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.CloseProvisionerTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.CloseProvisionerTransformer with new graph:
+data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_datastore.datastore - *terraform.NodeValidatableResource
+  data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_network.network - *terraform.NodeValidatableResource
+  data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_resource_pool.pool - *terraform.NodeValidatableResource
+  data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_virtual_machine.template - *terraform.NodeValidatableResource
+  data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+  var.template_name - *terraform.NodeRootVariable
+meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+  data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+  data.vsphere_datastore.datastore - *terraform.NodeValidatableResource
+  data.vsphere_network.network - *terraform.NodeValidatableResource
+  data.vsphere_resource_pool.pool - *terraform.NodeValidatableResource
+  data.vsphere_virtual_machine.template - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+  provisioner.local-exec - *terraform.NodeProvisioner
+  provisioner.remote-exec - *terraform.NodeProvisioner
+  var.disk_size - *terraform.NodeRootVariable
+  var.dns_server_list - *terraform.NodeRootVariable
+  var.guest_id - *terraform.NodeRootVariable
+  var.memory - *terraform.NodeRootVariable
+  var.num_cpus - *terraform.NodeRootVariable
+  var.ssh_password - *terraform.NodeRootVariable
+  var.template_name - *terraform.NodeRootVariable
+  var.vm_domain - *terraform.NodeRootVariable
+  var.vm_gateway - *terraform.NodeRootVariable
+  var.vm_hostname - *terraform.NodeRootVariable
+  var.vm_ip - *terraform.NodeRootVariable
+  var.vm_name - *terraform.NodeRootVariable
+  var.vm_netmask - *terraform.NodeRootVariable
+  var.vm_time_zone - *terraform.NodeRootVariable
+  var.vsphere_password - *terraform.NodeRootVariable
+  var.vsphere_server - *terraform.NodeRootVariable
+  var.vsphere_user - *terraform.NodeRootVariable
+  vsphere_virtual_machine.vm - *terraform.NodeValidatableResource
+  vsphere_virtual_machine.vm2 - *terraform.NodeValidatableResource
+provider.vsphere - *terraform.NodeApplyableProvider
+  var.vsphere_password - *terraform.NodeRootVariable
+  var.vsphere_server - *terraform.NodeRootVariable
+  var.vsphere_user - *terraform.NodeRootVariable
+provider.vsphere (close) - *terraform.graphNodeCloseProvider
+  data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+  data.vsphere_datastore.datastore - *terraform.NodeValidatableResource
+  data.vsphere_network.network - *terraform.NodeValidatableResource
+  data.vsphere_resource_pool.pool - *terraform.NodeValidatableResource
+  data.vsphere_virtual_machine.template - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+  vsphere_virtual_machine.vm - *terraform.NodeValidatableResource
+  vsphere_virtual_machine.vm2 - *terraform.NodeValidatableResource
+provisioner.local-exec - *terraform.NodeProvisioner
+provisioner.local-exec (close) - *terraform.graphNodeCloseProvisioner
+  vsphere_virtual_machine.vm - *terraform.NodeValidatableResource
+provisioner.remote-exec - *terraform.NodeProvisioner
+provisioner.remote-exec (close) - *terraform.graphNodeCloseProvisioner
+  vsphere_virtual_machine.vm - *terraform.NodeValidatableResource
+var.disk_size - *terraform.NodeRootVariable
+var.dns_server_list - *terraform.NodeRootVariable
+var.guest_id - *terraform.NodeRootVariable
+var.memory - *terraform.NodeRootVariable
+var.num_cpus - *terraform.NodeRootVariable
+var.ssh_password - *terraform.NodeRootVariable
+var.template_name - *terraform.NodeRootVariable
+var.vm_domain - *terraform.NodeRootVariable
+var.vm_gateway - *terraform.NodeRootVariable
+var.vm_hostname - *terraform.NodeRootVariable
+var.vm_ip - *terraform.NodeRootVariable
+var.vm_name - *terraform.NodeRootVariable
+var.vm_netmask - *terraform.NodeRootVariable
+var.vm_time_zone - *terraform.NodeRootVariable
+var.vsphere_password - *terraform.NodeRootVariable
+var.vsphere_server - *terraform.NodeRootVariable
+var.vsphere_user - *terraform.NodeRootVariable
+vsphere_virtual_machine.vm - *terraform.NodeValidatableResource
+  data.vsphere_datastore.datastore - *terraform.NodeValidatableResource
+  data.vsphere_network.network - *terraform.NodeValidatableResource
+  data.vsphere_resource_pool.pool - *terraform.NodeValidatableResource
+  data.vsphere_virtual_machine.template - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+  provisioner.local-exec - *terraform.NodeProvisioner
+  provisioner.remote-exec - *terraform.NodeProvisioner
+  var.disk_size - *terraform.NodeRootVariable
+  var.dns_server_list - *terraform.NodeRootVariable
+  var.guest_id - *terraform.NodeRootVariable
+  var.memory - *terraform.NodeRootVariable
+  var.num_cpus - *terraform.NodeRootVariable
+  var.ssh_password - *terraform.NodeRootVariable
+  var.vm_domain - *terraform.NodeRootVariable
+  var.vm_gateway - *terraform.NodeRootVariable
+  var.vm_hostname - *terraform.NodeRootVariable
+  var.vm_ip - *terraform.NodeRootVariable
+  var.vm_name - *terraform.NodeRootVariable
+  var.vm_netmask - *terraform.NodeRootVariable
+  var.vm_time_zone - *terraform.NodeRootVariable
+vsphere_virtual_machine.vm2 - *terraform.NodeValidatableResource
+  data.vsphere_datastore.datastore - *terraform.NodeValidatableResource
+  data.vsphere_network.network - *terraform.NodeValidatableResource
+  data.vsphere_resource_pool.pool - *terraform.NodeValidatableResource
+  data.vsphere_virtual_machine.template - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+  var.disk_size - *terraform.NodeRootVariable
+  var.dns_server_list - *terraform.NodeRootVariable
+  var.guest_id - *terraform.NodeRootVariable
+  var.memory - *terraform.NodeRootVariable
+  var.num_cpus - *terraform.NodeRootVariable
+  var.vm_domain - *terraform.NodeRootVariable
+  var.vm_gateway - *terraform.NodeRootVariable
+  var.vm_hostname - *terraform.NodeRootVariable
+  var.vm_name - *terraform.NodeRootVariable
+  var.vm_netmask - *terraform.NodeRootVariable
+  var.vm_time_zone - *terraform.NodeRootVariable
+------
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.RootTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.RootTransformer with new graph:
+data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_datastore.datastore - *terraform.NodeValidatableResource
+  data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_network.network - *terraform.NodeValidatableResource
+  data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_resource_pool.pool - *terraform.NodeValidatableResource
+  data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_virtual_machine.template - *terraform.NodeValidatableResource
+  data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+  var.template_name - *terraform.NodeRootVariable
+meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+  data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+  data.vsphere_datastore.datastore - *terraform.NodeValidatableResource
+  data.vsphere_network.network - *terraform.NodeValidatableResource
+  data.vsphere_resource_pool.pool - *terraform.NodeValidatableResource
+  data.vsphere_virtual_machine.template - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+  provisioner.local-exec - *terraform.NodeProvisioner
+  provisioner.remote-exec - *terraform.NodeProvisioner
+  var.disk_size - *terraform.NodeRootVariable
+  var.dns_server_list - *terraform.NodeRootVariable
+  var.guest_id - *terraform.NodeRootVariable
+  var.memory - *terraform.NodeRootVariable
+  var.num_cpus - *terraform.NodeRootVariable
+  var.ssh_password - *terraform.NodeRootVariable
+  var.template_name - *terraform.NodeRootVariable
+  var.vm_domain - *terraform.NodeRootVariable
+  var.vm_gateway - *terraform.NodeRootVariable
+  var.vm_hostname - *terraform.NodeRootVariable
+  var.vm_ip - *terraform.NodeRootVariable
+  var.vm_name - *terraform.NodeRootVariable
+  var.vm_netmask - *terraform.NodeRootVariable
+  var.vm_time_zone - *terraform.NodeRootVariable
+  var.vsphere_password - *terraform.NodeRootVariable
+  var.vsphere_server - *terraform.NodeRootVariable
+  var.vsphere_user - *terraform.NodeRootVariable
+  vsphere_virtual_machine.vm - *terraform.NodeValidatableResource
+  vsphere_virtual_machine.vm2 - *terraform.NodeValidatableResource
+provider.vsphere - *terraform.NodeApplyableProvider
+  var.vsphere_password - *terraform.NodeRootVariable
+  var.vsphere_server - *terraform.NodeRootVariable
+  var.vsphere_user - *terraform.NodeRootVariable
+provider.vsphere (close) - *terraform.graphNodeCloseProvider
+  data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+  data.vsphere_datastore.datastore - *terraform.NodeValidatableResource
+  data.vsphere_network.network - *terraform.NodeValidatableResource
+  data.vsphere_resource_pool.pool - *terraform.NodeValidatableResource
+  data.vsphere_virtual_machine.template - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+  vsphere_virtual_machine.vm - *terraform.NodeValidatableResource
+  vsphere_virtual_machine.vm2 - *terraform.NodeValidatableResource
+provisioner.local-exec - *terraform.NodeProvisioner
+provisioner.local-exec (close) - *terraform.graphNodeCloseProvisioner
+  vsphere_virtual_machine.vm - *terraform.NodeValidatableResource
+provisioner.remote-exec - *terraform.NodeProvisioner
+provisioner.remote-exec (close) - *terraform.graphNodeCloseProvisioner
+  vsphere_virtual_machine.vm - *terraform.NodeValidatableResource
+root - terraform.graphNodeRoot
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+  provider.vsphere (close) - *terraform.graphNodeCloseProvider
+  provisioner.local-exec (close) - *terraform.graphNodeCloseProvisioner
+  provisioner.remote-exec (close) - *terraform.graphNodeCloseProvisioner
+var.disk_size - *terraform.NodeRootVariable
+var.dns_server_list - *terraform.NodeRootVariable
+var.guest_id - *terraform.NodeRootVariable
+var.memory - *terraform.NodeRootVariable
+var.num_cpus - *terraform.NodeRootVariable
+var.ssh_password - *terraform.NodeRootVariable
+var.template_name - *terraform.NodeRootVariable
+var.vm_domain - *terraform.NodeRootVariable
+var.vm_gateway - *terraform.NodeRootVariable
+var.vm_hostname - *terraform.NodeRootVariable
+var.vm_ip - *terraform.NodeRootVariable
+var.vm_name - *terraform.NodeRootVariable
+var.vm_netmask - *terraform.NodeRootVariable
+var.vm_time_zone - *terraform.NodeRootVariable
+var.vsphere_password - *terraform.NodeRootVariable
+var.vsphere_server - *terraform.NodeRootVariable
+var.vsphere_user - *terraform.NodeRootVariable
+vsphere_virtual_machine.vm - *terraform.NodeValidatableResource
+  data.vsphere_datastore.datastore - *terraform.NodeValidatableResource
+  data.vsphere_network.network - *terraform.NodeValidatableResource
+  data.vsphere_resource_pool.pool - *terraform.NodeValidatableResource
+  data.vsphere_virtual_machine.template - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+  provisioner.local-exec - *terraform.NodeProvisioner
+  provisioner.remote-exec - *terraform.NodeProvisioner
+  var.disk_size - *terraform.NodeRootVariable
+  var.dns_server_list - *terraform.NodeRootVariable
+  var.guest_id - *terraform.NodeRootVariable
+  var.memory - *terraform.NodeRootVariable
+  var.num_cpus - *terraform.NodeRootVariable
+  var.ssh_password - *terraform.NodeRootVariable
+  var.vm_domain - *terraform.NodeRootVariable
+  var.vm_gateway - *terraform.NodeRootVariable
+  var.vm_hostname - *terraform.NodeRootVariable
+  var.vm_ip - *terraform.NodeRootVariable
+  var.vm_name - *terraform.NodeRootVariable
+  var.vm_netmask - *terraform.NodeRootVariable
+  var.vm_time_zone - *terraform.NodeRootVariable
+vsphere_virtual_machine.vm2 - *terraform.NodeValidatableResource
+  data.vsphere_datastore.datastore - *terraform.NodeValidatableResource
+  data.vsphere_network.network - *terraform.NodeValidatableResource
+  data.vsphere_resource_pool.pool - *terraform.NodeValidatableResource
+  data.vsphere_virtual_machine.template - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+  var.disk_size - *terraform.NodeRootVariable
+  var.dns_server_list - *terraform.NodeRootVariable
+  var.guest_id - *terraform.NodeRootVariable
+  var.memory - *terraform.NodeRootVariable
+  var.num_cpus - *terraform.NodeRootVariable
+  var.vm_domain - *terraform.NodeRootVariable
+  var.vm_gateway - *terraform.NodeRootVariable
+  var.vm_hostname - *terraform.NodeRootVariable
+  var.vm_name - *terraform.NodeRootVariable
+  var.vm_netmask - *terraform.NodeRootVariable
+  var.vm_time_zone - *terraform.NodeRootVariable
+------
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.TransitiveReductionTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.TransitiveReductionTransformer with new graph:
+data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_datastore.datastore - *terraform.NodeValidatableResource
+  data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+data.vsphere_network.network - *terraform.NodeValidatableResource
+  data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+data.vsphere_resource_pool.pool - *terraform.NodeValidatableResource
+  data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+data.vsphere_virtual_machine.template - *terraform.NodeValidatableResource
+  data.vsphere_datacenter.dc - *terraform.NodeValidatableResource
+  var.template_name - *terraform.NodeRootVariable
+meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+  vsphere_virtual_machine.vm - *terraform.NodeValidatableResource
+  vsphere_virtual_machine.vm2 - *terraform.NodeValidatableResource
+provider.vsphere - *terraform.NodeApplyableProvider
+  var.vsphere_password - *terraform.NodeRootVariable
+  var.vsphere_server - *terraform.NodeRootVariable
+  var.vsphere_user - *terraform.NodeRootVariable
+provider.vsphere (close) - *terraform.graphNodeCloseProvider
+  vsphere_virtual_machine.vm - *terraform.NodeValidatableResource
+  vsphere_virtual_machine.vm2 - *terraform.NodeValidatableResource
+provisioner.local-exec - *terraform.NodeProvisioner
+provisioner.local-exec (close) - *terraform.graphNodeCloseProvisioner
+  vsphere_virtual_machine.vm - *terraform.NodeValidatableResource
+provisioner.remote-exec - *terraform.NodeProvisioner
+provisioner.remote-exec (close) - *terraform.graphNodeCloseProvisioner
+  vsphere_virtual_machine.vm - *terraform.NodeValidatableResource
+root - terraform.graphNodeRoot
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+  provider.vsphere (close) - *terraform.graphNodeCloseProvider
+  provisioner.local-exec (close) - *terraform.graphNodeCloseProvisioner
+  provisioner.remote-exec (close) - *terraform.graphNodeCloseProvisioner
+var.disk_size - *terraform.NodeRootVariable
+var.dns_server_list - *terraform.NodeRootVariable
+var.guest_id - *terraform.NodeRootVariable
+var.memory - *terraform.NodeRootVariable
+var.num_cpus - *terraform.NodeRootVariable
+var.ssh_password - *terraform.NodeRootVariable
+var.template_name - *terraform.NodeRootVariable
+var.vm_domain - *terraform.NodeRootVariable
+var.vm_gateway - *terraform.NodeRootVariable
+var.vm_hostname - *terraform.NodeRootVariable
+var.vm_ip - *terraform.NodeRootVariable
+var.vm_name - *terraform.NodeRootVariable
+var.vm_netmask - *terraform.NodeRootVariable
+var.vm_time_zone - *terraform.NodeRootVariable
+var.vsphere_password - *terraform.NodeRootVariable
+var.vsphere_server - *terraform.NodeRootVariable
+var.vsphere_user - *terraform.NodeRootVariable
+vsphere_virtual_machine.vm - *terraform.NodeValidatableResource
+  data.vsphere_datastore.datastore - *terraform.NodeValidatableResource
+  data.vsphere_network.network - *terraform.NodeValidatableResource
+  data.vsphere_resource_pool.pool - *terraform.NodeValidatableResource
+  data.vsphere_virtual_machine.template - *terraform.NodeValidatableResource
+  provisioner.local-exec - *terraform.NodeProvisioner
+  provisioner.remote-exec - *terraform.NodeProvisioner
+  var.disk_size - *terraform.NodeRootVariable
+  var.dns_server_list - *terraform.NodeRootVariable
+  var.guest_id - *terraform.NodeRootVariable
+  var.memory - *terraform.NodeRootVariable
+  var.num_cpus - *terraform.NodeRootVariable
+  var.ssh_password - *terraform.NodeRootVariable
+  var.vm_domain - *terraform.NodeRootVariable
+  var.vm_gateway - *terraform.NodeRootVariable
+  var.vm_hostname - *terraform.NodeRootVariable
+  var.vm_ip - *terraform.NodeRootVariable
+  var.vm_name - *terraform.NodeRootVariable
+  var.vm_netmask - *terraform.NodeRootVariable
+  var.vm_time_zone - *terraform.NodeRootVariable
+vsphere_virtual_machine.vm2 - *terraform.NodeValidatableResource
+  data.vsphere_datastore.datastore - *terraform.NodeValidatableResource
+  data.vsphere_network.network - *terraform.NodeValidatableResource
+  data.vsphere_resource_pool.pool - *terraform.NodeValidatableResource
+  data.vsphere_virtual_machine.template - *terraform.NodeValidatableResource
+  var.disk_size - *terraform.NodeRootVariable
+  var.dns_server_list - *terraform.NodeRootVariable
+  var.guest_id - *terraform.NodeRootVariable
+  var.memory - *terraform.NodeRootVariable
+  var.num_cpus - *terraform.NodeRootVariable
+  var.vm_domain - *terraform.NodeRootVariable
+  var.vm_gateway - *terraform.NodeRootVariable
+  var.vm_hostname - *terraform.NodeRootVariable
+  var.vm_name - *terraform.NodeRootVariable
+  var.vm_netmask - *terraform.NodeRootVariable
+  var.vm_time_zone - *terraform.NodeRootVariable
+------
+2019/08/20 19:31:58 [DEBUG] Starting graph walk: walkValidate
+2019/08/20 19:31:58 [TRACE] dag/walk: updating graph
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "provisioner.local-exec"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "data.vsphere_resource_pool.pool"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "provisioner.remote-exec"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "vsphere_virtual_machine.vm"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "data.vsphere_datacenter.dc"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "var.template_name"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "var.num_cpus"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "provisioner.remote-exec (close)"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "var.dns_server_list"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "var.vsphere_user"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "var.vm_netmask"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "meta.count-boundary (EachMode fixup)"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "provisioner.local-exec (close)"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "var.guest_id"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "var.vm_ip"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "var.vm_domain"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "var.disk_size"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "var.vm_time_zone"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "root"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "data.vsphere_network.network"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "var.ssh_password"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "data.vsphere_datastore.datastore"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "vsphere_virtual_machine.vm2"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "var.vsphere_password"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "var.vm_hostname"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "var.vm_gateway"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "data.vsphere_virtual_machine.template"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "var.vm_name"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "var.vsphere_server"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "provider.vsphere"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "var.memory"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "provider.vsphere (close)"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "root" waiting on "provisioner.remote-exec (close)"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "data.vsphere_virtual_machine.template" waiting on "data.vsphere_datacenter.dc"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm2" waiting on "var.num_cpus"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "root" waiting on "provider.vsphere (close)"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "meta.count-boundary (EachMode fixup)" waiting on "vsphere_virtual_machine.vm"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm" waiting on "var.vm_hostname"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm" waiting on "data.vsphere_virtual_machine.template"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "provider.vsphere" waiting on "var.vsphere_password"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "root" waiting on "meta.count-boundary (EachMode fixup)"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm" waiting on "var.guest_id"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm" waiting on "var.vm_time_zone"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "data.vsphere_resource_pool.pool" waiting on "data.vsphere_datacenter.dc"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm" waiting on "provisioner.local-exec"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm2" waiting on "var.vm_name"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm" waiting on "data.vsphere_network.network"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm2" waiting on "var.vm_netmask"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "provisioner.local-exec (close)" waiting on "vsphere_virtual_machine.vm"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "provider.vsphere" waiting on "var.vsphere_user"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm2" waiting on "data.vsphere_virtual_machine.template"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm" waiting on "var.vm_domain"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm" waiting on "var.vm_netmask"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "data.vsphere_network.network" waiting on "data.vsphere_datacenter.dc"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm" waiting on "data.vsphere_datastore.datastore"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "provisioner.remote-exec (close)" waiting on "vsphere_virtual_machine.vm"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm" waiting on "var.num_cpus"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm2" waiting on "var.vm_time_zone"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm" waiting on "provisioner.remote-exec"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm2" waiting on "var.vm_hostname"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "provider.vsphere" waiting on "var.vsphere_server"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm2" waiting on "var.dns_server_list"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm2" waiting on "data.vsphere_datastore.datastore"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "provider.vsphere (close)" waiting on "vsphere_virtual_machine.vm2"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm2" waiting on "var.vm_gateway"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm2" waiting on "var.vm_domain"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm" waiting on "var.dns_server_list"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm2" waiting on "data.vsphere_network.network"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm" waiting on "var.memory"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm" waiting on "var.disk_size"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "data.vsphere_virtual_machine.template" waiting on "var.template_name"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm2" waiting on "var.guest_id"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "provider.vsphere (close)" waiting on "vsphere_virtual_machine.vm"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm" waiting on "var.vm_ip"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "data.vsphere_datastore.datastore" waiting on "data.vsphere_datacenter.dc"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "data.vsphere_datacenter.dc" waiting on "provider.vsphere"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "meta.count-boundary (EachMode fixup)" waiting on "vsphere_virtual_machine.vm2"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "root" waiting on "provisioner.local-exec (close)"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm2" waiting on "var.disk_size"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm" waiting on "var.vm_name"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm2" waiting on "data.vsphere_resource_pool.pool"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm" waiting on "data.vsphere_resource_pool.pool"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm" waiting on "var.ssh_password"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm2" waiting on "var.memory"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm" waiting on "var.vm_gateway"
+2019/08/20 19:31:58 [TRACE] dag/walk: dependencies changed for "data.vsphere_datacenter.dc", sending new deps
+2019/08/20 19:31:58 [TRACE] dag/walk: dependencies changed for "root", sending new deps
+2019/08/20 19:31:58 [TRACE] dag/walk: dependencies changed for "data.vsphere_virtual_machine.template", sending new deps
+2019/08/20 19:31:58 [TRACE] dag/walk: dependencies changed for "vsphere_virtual_machine.vm", sending new deps
+2019/08/20 19:31:58 [TRACE] dag/walk: dependencies changed for "provisioner.local-exec (close)", sending new deps
+2019/08/20 19:31:58 [TRACE] dag/walk: dependencies changed for "provisioner.remote-exec (close)", sending new deps
+2019/08/20 19:31:58 [TRACE] dag/walk: dependencies changed for "provider.vsphere (close)", sending new deps
+2019/08/20 19:31:58 [TRACE] dag/walk: dependencies changed for "data.vsphere_datastore.datastore", sending new deps
+2019/08/20 19:31:58 [TRACE] dag/walk: dependencies changed for "vsphere_virtual_machine.vm2", sending new deps
+2019/08/20 19:31:58 [TRACE] dag/walk: dependencies changed for "meta.count-boundary (EachMode fixup)", sending new deps
+2019/08/20 19:31:58 [TRACE] dag/walk: dependencies changed for "provider.vsphere", sending new deps
+2019/08/20 19:31:58 [TRACE] dag/walk: dependencies changed for "data.vsphere_resource_pool.pool", sending new deps
+2019/08/20 19:31:58 [TRACE] dag/walk: dependencies changed for "data.vsphere_network.network", sending new deps
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "provisioner.local-exec"
+2019/08/20 19:31:58 [TRACE] vertex "provisioner.local-exec": starting visit (*terraform.NodeProvisioner)
+2019/08/20 19:31:58 [TRACE] vertex "provisioner.local-exec": evaluating
+2019/08/20 19:31:58 [TRACE] [walkValidate] Entering eval tree: provisioner.local-exec
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalInitProvisioner
+2019-08-20T19:31:58.025-0700 [DEBUG] plugin: starting plugin: path=/usr/local/bin/terraform args=[/usr/local/bin/terraform, internal-plugin, provisioner, local-exec]
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "var.disk_size"
+2019/08/20 19:31:58 [TRACE] vertex "var.disk_size": starting visit (*terraform.NodeRootVariable)
+2019/08/20 19:31:58 [TRACE] vertex "var.disk_size": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "var.template_name"
+2019/08/20 19:31:58 [TRACE] vertex "var.template_name": starting visit (*terraform.NodeRootVariable)
+2019/08/20 19:31:58 [TRACE] vertex "var.template_name": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "var.vm_ip"
+2019/08/20 19:31:58 [TRACE] vertex "var.vm_ip": starting visit (*terraform.NodeRootVariable)
+2019/08/20 19:31:58 [TRACE] vertex "var.vm_ip": visit complete
+2019-08-20T19:31:58.025-0700 [DEBUG] plugin: plugin started: path=/usr/local/bin/terraform pid=5278
+2019-08-20T19:31:58.025-0700 [DEBUG] plugin: waiting for RPC address: path=/usr/local/bin/terraform
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "var.vm_domain"
+2019/08/20 19:31:58 [TRACE] vertex "var.vm_domain": starting visit (*terraform.NodeRootVariable)
+2019/08/20 19:31:58 [TRACE] vertex "var.vm_domain": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "var.dns_server_list"
+2019/08/20 19:31:58 [TRACE] vertex "var.dns_server_list": starting visit (*terraform.NodeRootVariable)
+2019/08/20 19:31:58 [TRACE] vertex "var.dns_server_list": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "var.vsphere_user"
+2019/08/20 19:31:58 [TRACE] vertex "var.vsphere_user": starting visit (*terraform.NodeRootVariable)
+2019/08/20 19:31:58 [TRACE] vertex "var.vsphere_user": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "var.vm_netmask"
+2019/08/20 19:31:58 [TRACE] vertex "var.vm_netmask": starting visit (*terraform.NodeRootVariable)
+2019/08/20 19:31:58 [TRACE] vertex "var.vm_netmask": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "var.vm_time_zone"
+2019/08/20 19:31:58 [TRACE] vertex "var.vm_time_zone": starting visit (*terraform.NodeRootVariable)
+2019/08/20 19:31:58 [TRACE] vertex "var.vm_time_zone": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "var.guest_id"
+2019/08/20 19:31:58 [TRACE] vertex "var.guest_id": starting visit (*terraform.NodeRootVariable)
+2019/08/20 19:31:58 [TRACE] vertex "var.guest_id": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "var.ssh_password"
+2019/08/20 19:31:58 [TRACE] vertex "var.ssh_password": starting visit (*terraform.NodeRootVariable)
+2019/08/20 19:31:58 [TRACE] vertex "var.ssh_password": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "provisioner.remote-exec"
+2019/08/20 19:31:58 [TRACE] vertex "provisioner.remote-exec": starting visit (*terraform.NodeProvisioner)
+2019/08/20 19:31:58 [TRACE] vertex "provisioner.remote-exec": evaluating
+2019/08/20 19:31:58 [TRACE] [walkValidate] Entering eval tree: provisioner.remote-exec
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalInitProvisioner
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "var.num_cpus"
+2019/08/20 19:31:58 [TRACE] vertex "var.num_cpus": starting visit (*terraform.NodeRootVariable)
+2019/08/20 19:31:58 [TRACE] vertex "var.num_cpus": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "var.vsphere_password"
+2019/08/20 19:31:58 [TRACE] vertex "var.vsphere_password": starting visit (*terraform.NodeRootVariable)
+2019/08/20 19:31:58 [TRACE] vertex "var.vsphere_password": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "var.memory"
+2019/08/20 19:31:58 [TRACE] vertex "var.memory": starting visit (*terraform.NodeRootVariable)
+2019/08/20 19:31:58 [TRACE] vertex "var.memory": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "var.vm_hostname"
+2019/08/20 19:31:58 [TRACE] vertex "var.vm_hostname": starting visit (*terraform.NodeRootVariable)
+2019/08/20 19:31:58 [TRACE] vertex "var.vm_hostname": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "var.vm_name"
+2019/08/20 19:31:58 [TRACE] vertex "var.vm_name": starting visit (*terraform.NodeRootVariable)
+2019/08/20 19:31:58 [TRACE] vertex "var.vm_name": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "var.vm_gateway"
+2019/08/20 19:31:58 [TRACE] vertex "var.vm_gateway": starting visit (*terraform.NodeRootVariable)
+2019/08/20 19:31:58 [TRACE] vertex "var.vm_gateway": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "var.vsphere_server"
+2019/08/20 19:31:58 [TRACE] vertex "var.vsphere_server": starting visit (*terraform.NodeRootVariable)
+2019/08/20 19:31:58 [TRACE] vertex "var.vsphere_server": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "provider.vsphere"
+2019/08/20 19:31:58 [TRACE] vertex "provider.vsphere": starting visit (*terraform.NodeApplyableProvider)
+2019/08/20 19:31:58 [TRACE] vertex "provider.vsphere": evaluating
+2019/08/20 19:31:58 [TRACE] [walkValidate] Entering eval tree: provider.vsphere
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalSequence
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalInitProvider
+2019-08-20T19:31:58.026-0700 [INFO]  plugin: configuring client automatic mTLS
+2019-08-20T19:31:58.054-0700 [DEBUG] plugin.terraform: 2019/08/20 19:31:58 [INFO] Terraform version: 0.12.6  
+2019-08-20T19:31:58.054-0700 [DEBUG] plugin.terraform: 2019/08/20 19:31:58 [INFO] Go runtime version: go1.12.4
+2019-08-20T19:31:58.054-0700 [DEBUG] plugin.terraform: 2019/08/20 19:31:58 [INFO] CLI args: []string{"/usr/local/bin/terraform", "internal-plugin", "provisioner", "local-exec"}
+2019-08-20T19:31:58.054-0700 [DEBUG] plugin.terraform: 2019/08/20 19:31:58 [DEBUG] Attempting to open CLI config file: /home/john/.terraformrc
+2019-08-20T19:31:58.054-0700 [DEBUG] plugin.terraform: 2019/08/20 19:31:58 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2019-08-20T19:31:58.059-0700 [DEBUG] plugin: using plugin: version=5
+2019/08/20 19:31:58 [TRACE] [walkValidate] Exiting eval tree: provisioner.local-exec
+2019/08/20 19:31:58 [TRACE] vertex "provisioner.local-exec": visit complete
+2019-08-20T19:31:58.060-0700 [DEBUG] plugin: starting plugin: path=/usr/local/bin/terraform args=[/usr/local/bin/terraform, internal-plugin, provisioner, remote-exec]
+2019-08-20T19:31:58.060-0700 [DEBUG] plugin: plugin started: path=/usr/local/bin/terraform pid=5286
+2019-08-20T19:31:58.060-0700 [DEBUG] plugin: waiting for RPC address: path=/usr/local/bin/terraform
+2019-08-20T19:31:58.060-0700 [DEBUG] plugin.terraform: 2019/08/20 19:31:58 [INFO] CLI command args: []string{"internal-plugin", "provisioner", "local-exec"}
+2019-08-20T19:31:58.060-0700 [DEBUG] plugin.terraform: local-exec-provisioner (internal) 2019/08/20 19:31:58 [INFO] Starting provisioner plugin local-exec
+2019-08-20T19:31:58.060-0700 [DEBUG] plugin.terraform: plugin address: address=/tmp/plugin212579112 network=unix timestamp=2019-08-20T19:31:58.058-0700
+2019-08-20T19:31:58.073-0700 [DEBUG] plugin.terraform: 2019/08/20 19:31:58 [INFO] Terraform version: 0.12.6  
+2019-08-20T19:31:58.073-0700 [DEBUG] plugin.terraform: 2019/08/20 19:31:58 [INFO] Go runtime version: go1.12.4
+2019-08-20T19:31:58.073-0700 [DEBUG] plugin.terraform: 2019/08/20 19:31:58 [INFO] CLI args: []string{"/usr/local/bin/terraform", "internal-plugin", "provisioner", "remote-exec"}
+2019-08-20T19:31:58.073-0700 [DEBUG] plugin.terraform: 2019/08/20 19:31:58 [DEBUG] Attempting to open CLI config file: /home/john/.terraformrc
+2019-08-20T19:31:58.073-0700 [DEBUG] plugin.terraform: 2019/08/20 19:31:58 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2019-08-20T19:31:58.074-0700 [DEBUG] plugin: starting plugin: path=/home/john/terraform-ansible-test-scripts/.terraform/plugins/linux_amd64/terraform-provider-vsphere_v1.12.0_x4 args=[/home/john/terraform-ansible-test-scripts/.terraform/plugins/linux_amd64/terraform-provider-vsphere_v1.12.0_x4]
+2019-08-20T19:31:58.074-0700 [DEBUG] plugin: plugin started: path=/home/john/terraform-ansible-test-scripts/.terraform/plugins/linux_amd64/terraform-provider-vsphere_v1.12.0_x4 pid=5296
+2019-08-20T19:31:58.074-0700 [DEBUG] plugin: waiting for RPC address: path=/home/john/terraform-ansible-test-scripts/.terraform/plugins/linux_amd64/terraform-provider-vsphere_v1.12.0_x4
+2019-08-20T19:31:58.074-0700 [DEBUG] plugin: using plugin: version=5
+2019-08-20T19:31:58.074-0700 [DEBUG] plugin.terraform: 2019/08/20 19:31:58 [INFO] CLI command args: []string{"internal-plugin", "provisioner", "remote-exec"}
+2019-08-20T19:31:58.074-0700 [DEBUG] plugin.terraform: remote-exec-provisioner (internal) 2019/08/20 19:31:58 [INFO] Starting provisioner plugin remote-exec
+2019/08/20 19:31:58 [TRACE] [walkValidate] Exiting eval tree: provisioner.remote-exec
+2019-08-20T19:31:58.074-0700 [DEBUG] plugin.terraform: plugin address: address=/tmp/plugin784115084 network=unix timestamp=2019-08-20T19:31:58.074-0700
+2019/08/20 19:31:58 [TRACE] vertex "provisioner.remote-exec": visit complete
+2019-08-20T19:31:58.088-0700 [INFO]  plugin.terraform-provider-vsphere_v1.12.0_x4: configuring server automatic mTLS: timestamp=2019-08-20T19:31:58.088-0700
+2019-08-20T19:31:58.128-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: plugin address: address=/tmp/plugin445183072 network=unix timestamp=2019-08-20T19:31:58.128-0700
+2019-08-20T19:31:58.128-0700 [DEBUG] plugin: using plugin: version=5
+2019/08/20 19:31:58 [TRACE] BuiltinEvalContext: Initialized "vsphere" provider for provider.vsphere
+2019/08/20 19:31:58 [TRACE] <root>: eval: terraform.EvalNoop
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalOpFilter
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalSequence
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalValidateProvider
+2019/08/20 19:31:58 [TRACE] buildProviderConfig for provider.vsphere: using explicit config only
+2019/08/20 19:31:58 [TRACE] GRPCProvider: GetSchema
+2019/08/20 19:31:58 [TRACE] GRPCProvider: PrepareProviderConfig
+2019/08/20 19:31:58 [TRACE] <root>: eval: terraform.EvalNoop
+2019/08/20 19:31:58 [TRACE] <root>: eval: terraform.EvalNoop
+2019/08/20 19:31:58 [TRACE] [walkValidate] Exiting eval tree: provider.vsphere
+2019/08/20 19:31:58 [TRACE] vertex "provider.vsphere": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "data.vsphere_datacenter.dc"
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_datacenter.dc": starting visit (*terraform.NodeValidatableResource)
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_datacenter.dc": evaluating
+2019/08/20 19:31:58 [TRACE] [walkValidate] Entering eval tree: data.vsphere_datacenter.dc
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalSequence
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalValidateResource
+2019/08/20 19:31:58 [TRACE] GRPCProvider: ValidateDataSourceConfig
+2019/08/20 19:31:58 [TRACE] [walkValidate] Exiting eval tree: data.vsphere_datacenter.dc
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_datacenter.dc": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "data.vsphere_virtual_machine.template"
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_virtual_machine.template": starting visit (*terraform.NodeValidatableResource)
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_virtual_machine.template": evaluating
+2019/08/20 19:31:58 [TRACE] [walkValidate] Entering eval tree: data.vsphere_virtual_machine.template
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalSequence
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalValidateResource
+2019/08/20 19:31:58 [TRACE] GRPCProvider: ValidateDataSourceConfig
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "data.vsphere_network.network"
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_network.network": starting visit (*terraform.NodeValidatableResource)
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_network.network": evaluating
+2019/08/20 19:31:58 [TRACE] [walkValidate] Entering eval tree: data.vsphere_network.network
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalSequence
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalValidateResource
+2019/08/20 19:31:58 [TRACE] GRPCProvider: ValidateDataSourceConfig
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "data.vsphere_resource_pool.pool"
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_resource_pool.pool": starting visit (*terraform.NodeValidatableResource)
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_resource_pool.pool": evaluating
+2019/08/20 19:31:58 [TRACE] [walkValidate] Entering eval tree: data.vsphere_resource_pool.pool
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalSequence
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalValidateResource
+2019/08/20 19:31:58 [TRACE] GRPCProvider: ValidateDataSourceConfig
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "data.vsphere_datastore.datastore"
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_datastore.datastore": starting visit (*terraform.NodeValidatableResource)
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_datastore.datastore": evaluating
+2019/08/20 19:31:58 [TRACE] [walkValidate] Entering eval tree: data.vsphere_datastore.datastore
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalSequence
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalValidateResource
+2019/08/20 19:31:58 [TRACE] GRPCProvider: ValidateDataSourceConfig
+2019/08/20 19:31:58 [TRACE] [walkValidate] Exiting eval tree: data.vsphere_resource_pool.pool
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_resource_pool.pool": visit complete
+2019/08/20 19:31:58 [TRACE] [walkValidate] Exiting eval tree: data.vsphere_virtual_machine.template
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_virtual_machine.template": visit complete
+2019/08/20 19:31:58 [TRACE] [walkValidate] Exiting eval tree: data.vsphere_datastore.datastore
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_datastore.datastore": visit complete
+2019/08/20 19:31:58 [TRACE] [walkValidate] Exiting eval tree: data.vsphere_network.network
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_network.network": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "vsphere_virtual_machine.vm"
+2019/08/20 19:31:58 [TRACE] vertex "vsphere_virtual_machine.vm": starting visit (*terraform.NodeValidatableResource)
+2019/08/20 19:31:58 [TRACE] vertex "vsphere_virtual_machine.vm": evaluating
+2019/08/20 19:31:58 [TRACE] [walkValidate] Entering eval tree: vsphere_virtual_machine.vm
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalSequence
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalValidateResource
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "vsphere_virtual_machine.vm2"
+2019/08/20 19:31:58 [TRACE] vertex "vsphere_virtual_machine.vm2": starting visit (*terraform.NodeValidatableResource)
+2019/08/20 19:31:58 [TRACE] vertex "vsphere_virtual_machine.vm2": evaluating
+2019/08/20 19:31:58 [TRACE] [walkValidate] Entering eval tree: vsphere_virtual_machine.vm2
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalSequence
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalValidateResource
+2019/08/20 19:31:58 [TRACE] GRPCProvider: ValidateResourceTypeConfig
+2019/08/20 19:31:58 [TRACE] GRPCProvider: ValidateResourceTypeConfig
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalGetProvisioner
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalValidateProvisioner
+2019/08/20 19:31:58 [TRACE] [walkValidate] Exiting eval tree: vsphere_virtual_machine.vm2
+2019/08/20 19:31:58 [TRACE] vertex "vsphere_virtual_machine.vm2": visit complete
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalGetProvisioner
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalValidateProvisioner
+2019/08/20 19:31:58 [TRACE] [walkValidate] Exiting eval tree: vsphere_virtual_machine.vm
+2019/08/20 19:31:58 [TRACE] vertex "vsphere_virtual_machine.vm": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "provisioner.local-exec (close)"
+2019/08/20 19:31:58 [TRACE] vertex "provisioner.local-exec (close)": starting visit (*terraform.graphNodeCloseProvisioner)
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "meta.count-boundary (EachMode fixup)"
+2019/08/20 19:31:58 [TRACE] vertex "meta.count-boundary (EachMode fixup)": starting visit (*terraform.NodeCountBoundary)
+2019/08/20 19:31:58 [TRACE] vertex "meta.count-boundary (EachMode fixup)": evaluating
+2019/08/20 19:31:58 [TRACE] [walkValidate] Entering eval tree: meta.count-boundary (EachMode fixup)
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalCountFixZeroOneBoundaryGlobal
+2019/08/20 19:31:58 [TRACE] [walkValidate] Exiting eval tree: meta.count-boundary (EachMode fixup)
+2019/08/20 19:31:58 [TRACE] vertex "meta.count-boundary (EachMode fixup)": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "provider.vsphere (close)"
+2019/08/20 19:31:58 [TRACE] vertex "provider.vsphere (close)": starting visit (*terraform.graphNodeCloseProvider)
+2019/08/20 19:31:58 [TRACE] vertex "provider.vsphere (close)": evaluating
+2019/08/20 19:31:58 [TRACE] [walkValidate] Entering eval tree: provider.vsphere (close)
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalCloseProvider
+2019/08/20 19:31:58 [TRACE] GRPCProvider: Close
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "provisioner.remote-exec (close)"
+2019/08/20 19:31:58 [TRACE] vertex "provisioner.remote-exec (close)": starting visit (*terraform.graphNodeCloseProvisioner)
+2019/08/20 19:31:58 [TRACE] vertex "provisioner.remote-exec (close)": evaluating
+2019/08/20 19:31:58 [TRACE] [walkValidate] Entering eval tree: provisioner.remote-exec (close)
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalCloseProvisioner
+2019-08-20T19:31:58.235-0700 [DEBUG] plugin: plugin process exited: path=/usr/local/bin/terraform pid=5286
+2019-08-20T19:31:58.235-0700 [DEBUG] plugin: plugin exited
+2019/08/20 19:31:58 [TRACE] [walkValidate] Exiting eval tree: provisioner.remote-exec (close)
+2019/08/20 19:31:58 [TRACE] vertex "provisioner.remote-exec (close)": visit complete
+2019/08/20 19:31:58 [TRACE] vertex "provisioner.local-exec (close)": evaluating
+2019/08/20 19:31:58 [TRACE] [walkValidate] Entering eval tree: provisioner.local-exec (close)
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalCloseProvisioner
+2019-08-20T19:31:58.236-0700 [DEBUG] plugin: plugin process exited: path=/home/john/terraform-ansible-test-scripts/.terraform/plugins/linux_amd64/terraform-provider-vsphere_v1.12.0_x4 pid=5296
+2019-08-20T19:31:58.236-0700 [DEBUG] plugin: plugin exited
+2019/08/20 19:31:58 [TRACE] [walkValidate] Exiting eval tree: provider.vsphere (close)
+2019/08/20 19:31:58 [TRACE] vertex "provider.vsphere (close)": visit complete
+2019-08-20T19:31:58.237-0700 [DEBUG] plugin: plugin process exited: path=/usr/local/bin/terraform pid=5278
+2019-08-20T19:31:58.237-0700 [DEBUG] plugin: plugin exited
+2019/08/20 19:31:58 [TRACE] [walkValidate] Exiting eval tree: provisioner.local-exec (close)
+2019/08/20 19:31:58 [TRACE] vertex "provisioner.local-exec (close)": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "root"
+2019/08/20 19:31:58 [TRACE] vertex "root": starting visit (terraform.graphNodeRoot)
+2019/08/20 19:31:58 [TRACE] vertex "root": visit complete
+2019/08/20 19:31:58 [INFO] backend/local: apply calling Refresh
+2019/08/20 19:31:58 [INFO] terraform: building graph: GraphTypeRefresh
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.ConfigTransformer
+2019/08/20 19:31:58 [TRACE] ConfigTransformer: Starting for path: 
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.ConfigTransformer with new graph:
+vsphere_virtual_machine.vm - *terraform.NodeRefreshableManagedResource
+vsphere_virtual_machine.vm2 - *terraform.NodeRefreshableManagedResource
+------
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.ConfigTransformer
+2019/08/20 19:31:58 [TRACE] ConfigTransformer: Starting for path: 
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.ConfigTransformer with new graph:
+data.vsphere_datacenter.dc - *terraform.NodeRefreshableDataResource
+data.vsphere_datastore.datastore - *terraform.NodeRefreshableDataResource
+data.vsphere_network.network - *terraform.NodeRefreshableDataResource
+data.vsphere_resource_pool.pool - *terraform.NodeRefreshableDataResource
+data.vsphere_virtual_machine.template - *terraform.NodeRefreshableDataResource
+vsphere_virtual_machine.vm - *terraform.NodeRefreshableManagedResource
+vsphere_virtual_machine.vm2 - *terraform.NodeRefreshableManagedResource
+------
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.OrphanResourceInstanceTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.OrphanResourceInstanceTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.StateTransformer
+2019/08/20 19:31:58 [TRACE] StateTransformer: creating nodes for deposed instance objects only
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.StateTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.AttachResourceConfigTransformer
+2019/08/20 19:31:58 [TRACE] AttachResourceConfigTransformer: attaching to "data.vsphere_datastore.datastore" (*terraform.NodeRefreshableDataResource) config from hcl.Range{Filename:"vsphere_terraform.tf", Start:hcl.Pos{Line:13, Column:1, Byte:221}, End:hcl.Pos{Line:13, Column:37, Byte:257}}
+2019/08/20 19:31:58 [TRACE] AttachResourceConfigTransformer: attaching to "vsphere_virtual_machine.vm2" (*terraform.NodeRefreshableManagedResource) config from vsphere_terraform.tf:33,1-41
+2019/08/20 19:31:58 [TRACE] AttachResourceConfigTransformer: attaching to "vsphere_virtual_machine.vm" (*terraform.NodeRefreshableManagedResource) config from vsphere_terraform.tf:81,1-40
+2019/08/20 19:31:58 [TRACE] AttachResourceConfigTransformer: attaching to "data.vsphere_resource_pool.pool" (*terraform.NodeRefreshableDataResource) config from hcl.Range{Filename:"vsphere_terraform.tf", Start:hcl.Pos{Line:18, Column:1, Byte:336}, End:hcl.Pos{Line:18, Column:36, Byte:371}}
+2019/08/20 19:31:58 [TRACE] AttachResourceConfigTransformer: attaching to "data.vsphere_network.network" (*terraform.NodeRefreshableDataResource) config from hcl.Range{Filename:"vsphere_terraform.tf", Start:hcl.Pos{Line:23, Column:1, Byte:449}, End:hcl.Pos{Line:23, Column:33, Byte:481}}
+2019/08/20 19:31:58 [TRACE] AttachResourceConfigTransformer: attaching to "data.vsphere_virtual_machine.template" (*terraform.NodeRefreshableDataResource) config from hcl.Range{Filename:"vsphere_terraform.tf", Start:hcl.Pos{Line:28, Column:1, Byte:560}, End:hcl.Pos{Line:28, Column:42, Byte:601}}
+2019/08/20 19:31:58 [TRACE] AttachResourceConfigTransformer: attaching to "data.vsphere_datacenter.dc" (*terraform.NodeRefreshableDataResource) config from hcl.Range{Filename:"vsphere_terraform.tf", Start:hcl.Pos{Line:9, Column:1, Byte:164}, End:hcl.Pos{Line:9, Column:31, Byte:194}}
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.AttachResourceConfigTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.RootVariableTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.RootVariableTransformer with new graph:
+data.vsphere_datacenter.dc - *terraform.NodeRefreshableDataResource
+data.vsphere_datastore.datastore - *terraform.NodeRefreshableDataResource
+data.vsphere_network.network - *terraform.NodeRefreshableDataResource
+data.vsphere_resource_pool.pool - *terraform.NodeRefreshableDataResource
+data.vsphere_virtual_machine.template - *terraform.NodeRefreshableDataResource
+var.disk_size - *terraform.NodeRootVariable
+var.dns_server_list - *terraform.NodeRootVariable
+var.guest_id - *terraform.NodeRootVariable
+var.memory - *terraform.NodeRootVariable
+var.num_cpus - *terraform.NodeRootVariable
+var.ssh_password - *terraform.NodeRootVariable
+var.template_name - *terraform.NodeRootVariable
+var.vm_domain - *terraform.NodeRootVariable
+var.vm_gateway - *terraform.NodeRootVariable
+var.vm_hostname - *terraform.NodeRootVariable
+var.vm_ip - *terraform.NodeRootVariable
+var.vm_name - *terraform.NodeRootVariable
+var.vm_netmask - *terraform.NodeRootVariable
+var.vm_time_zone - *terraform.NodeRootVariable
+var.vsphere_password - *terraform.NodeRootVariable
+var.vsphere_server - *terraform.NodeRootVariable
+var.vsphere_user - *terraform.NodeRootVariable
+vsphere_virtual_machine.vm - *terraform.NodeRefreshableManagedResource
+vsphere_virtual_machine.vm2 - *terraform.NodeRefreshableManagedResource
+------
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.LocalTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.LocalTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.OutputTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.OutputTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.ModuleVariableTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.ModuleVariableTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.graphTransformerMulti
+2019/08/20 19:31:58 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderConfigTransformer
+2019/08/20 19:31:58 [TRACE] ProviderConfigTransformer: attaching to "provider.vsphere" provider configuration from vsphere_terraform.tf:1,1-19
+2019/08/20 19:31:58 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderConfigTransformer with new graph:
+data.vsphere_datacenter.dc - *terraform.NodeRefreshableDataResource
+data.vsphere_datastore.datastore - *terraform.NodeRefreshableDataResource
+data.vsphere_network.network - *terraform.NodeRefreshableDataResource
+data.vsphere_resource_pool.pool - *terraform.NodeRefreshableDataResource
+data.vsphere_virtual_machine.template - *terraform.NodeRefreshableDataResource
+provider.vsphere - *terraform.NodeApplyableProvider
+var.disk_size - *terraform.NodeRootVariable
+var.dns_server_list - *terraform.NodeRootVariable
+var.guest_id - *terraform.NodeRootVariable
+var.memory - *terraform.NodeRootVariable
+var.num_cpus - *terraform.NodeRootVariable
+var.ssh_password - *terraform.NodeRootVariable
+var.template_name - *terraform.NodeRootVariable
+var.vm_domain - *terraform.NodeRootVariable
+var.vm_gateway - *terraform.NodeRootVariable
+var.vm_hostname - *terraform.NodeRootVariable
+var.vm_ip - *terraform.NodeRootVariable
+var.vm_name - *terraform.NodeRootVariable
+var.vm_netmask - *terraform.NodeRootVariable
+var.vm_time_zone - *terraform.NodeRootVariable
+var.vsphere_password - *terraform.NodeRootVariable
+var.vsphere_server - *terraform.NodeRootVariable
+var.vsphere_user - *terraform.NodeRootVariable
+vsphere_virtual_machine.vm - *terraform.NodeRefreshableManagedResource
+vsphere_virtual_machine.vm2 - *terraform.NodeRefreshableManagedResource
+------
+2019/08/20 19:31:58 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.MissingProviderTransformer
+2019/08/20 19:31:58 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.MissingProviderTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderTransformer
+2019/08/20 19:31:58 [TRACE] ProviderTransformer: vsphere_virtual_machine.vm2 is provided by provider.vsphere or inherited equivalent
+2019/08/20 19:31:58 [TRACE] ProviderTransformer: data.vsphere_virtual_machine.template is provided by provider.vsphere or inherited equivalent
+2019/08/20 19:31:58 [TRACE] ProviderTransformer: vsphere_virtual_machine.vm is provided by provider.vsphere or inherited equivalent
+2019/08/20 19:31:58 [TRACE] ProviderTransformer: data.vsphere_datastore.datastore is provided by provider.vsphere or inherited equivalent
+2019/08/20 19:31:58 [TRACE] ProviderTransformer: data.vsphere_resource_pool.pool is provided by provider.vsphere or inherited equivalent
+2019/08/20 19:31:58 [TRACE] ProviderTransformer: data.vsphere_network.network is provided by provider.vsphere or inherited equivalent
+2019/08/20 19:31:58 [TRACE] ProviderTransformer: data.vsphere_datacenter.dc is provided by provider.vsphere or inherited equivalent
+2019/08/20 19:31:58 [TRACE] ProviderTransformer: exact match for provider.vsphere serving vsphere_virtual_machine.vm2
+2019/08/20 19:31:58 [DEBUG] ProviderTransformer: "vsphere_virtual_machine.vm2" (*terraform.NodeRefreshableManagedResource) needs provider.vsphere
+2019/08/20 19:31:58 [TRACE] ProviderTransformer: exact match for provider.vsphere serving data.vsphere_virtual_machine.template
+2019/08/20 19:31:58 [DEBUG] ProviderTransformer: "data.vsphere_virtual_machine.template" (*terraform.NodeRefreshableDataResource) needs provider.vsphere
+2019/08/20 19:31:58 [TRACE] ProviderTransformer: exact match for provider.vsphere serving vsphere_virtual_machine.vm
+2019/08/20 19:31:58 [DEBUG] ProviderTransformer: "vsphere_virtual_machine.vm" (*terraform.NodeRefreshableManagedResource) needs provider.vsphere
+2019/08/20 19:31:58 [TRACE] ProviderTransformer: exact match for provider.vsphere serving data.vsphere_datastore.datastore
+2019/08/20 19:31:58 [DEBUG] ProviderTransformer: "data.vsphere_datastore.datastore" (*terraform.NodeRefreshableDataResource) needs provider.vsphere
+2019/08/20 19:31:58 [TRACE] ProviderTransformer: exact match for provider.vsphere serving data.vsphere_resource_pool.pool
+2019/08/20 19:31:58 [DEBUG] ProviderTransformer: "data.vsphere_resource_pool.pool" (*terraform.NodeRefreshableDataResource) needs provider.vsphere
+2019/08/20 19:31:58 [TRACE] ProviderTransformer: exact match for provider.vsphere serving data.vsphere_network.network
+2019/08/20 19:31:58 [DEBUG] ProviderTransformer: "data.vsphere_network.network" (*terraform.NodeRefreshableDataResource) needs provider.vsphere
+2019/08/20 19:31:58 [TRACE] ProviderTransformer: exact match for provider.vsphere serving data.vsphere_datacenter.dc
+2019/08/20 19:31:58 [DEBUG] ProviderTransformer: "data.vsphere_datacenter.dc" (*terraform.NodeRefreshableDataResource) needs provider.vsphere
+2019/08/20 19:31:58 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderTransformer with new graph:
+data.vsphere_datacenter.dc - *terraform.NodeRefreshableDataResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_datastore.datastore - *terraform.NodeRefreshableDataResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_network.network - *terraform.NodeRefreshableDataResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_resource_pool.pool - *terraform.NodeRefreshableDataResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_virtual_machine.template - *terraform.NodeRefreshableDataResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+provider.vsphere - *terraform.NodeApplyableProvider
+var.disk_size - *terraform.NodeRootVariable
+var.dns_server_list - *terraform.NodeRootVariable
+var.guest_id - *terraform.NodeRootVariable
+var.memory - *terraform.NodeRootVariable
+var.num_cpus - *terraform.NodeRootVariable
+var.ssh_password - *terraform.NodeRootVariable
+var.template_name - *terraform.NodeRootVariable
+var.vm_domain - *terraform.NodeRootVariable
+var.vm_gateway - *terraform.NodeRootVariable
+var.vm_hostname - *terraform.NodeRootVariable
+var.vm_ip - *terraform.NodeRootVariable
+var.vm_name - *terraform.NodeRootVariable
+var.vm_netmask - *terraform.NodeRootVariable
+var.vm_time_zone - *terraform.NodeRootVariable
+var.vsphere_password - *terraform.NodeRootVariable
+var.vsphere_server - *terraform.NodeRootVariable
+var.vsphere_user - *terraform.NodeRootVariable
+vsphere_virtual_machine.vm - *terraform.NodeRefreshableManagedResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+vsphere_virtual_machine.vm2 - *terraform.NodeRefreshableManagedResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+------
+2019/08/20 19:31:58 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.PruneProviderTransformer
+2019/08/20 19:31:58 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.PruneProviderTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ParentProviderTransformer
+2019/08/20 19:31:58 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ParentProviderTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.graphTransformerMulti with new graph:
+data.vsphere_datacenter.dc - *terraform.NodeRefreshableDataResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_datastore.datastore - *terraform.NodeRefreshableDataResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_network.network - *terraform.NodeRefreshableDataResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_resource_pool.pool - *terraform.NodeRefreshableDataResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_virtual_machine.template - *terraform.NodeRefreshableDataResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+provider.vsphere - *terraform.NodeApplyableProvider
+var.disk_size - *terraform.NodeRootVariable
+var.dns_server_list - *terraform.NodeRootVariable
+var.guest_id - *terraform.NodeRootVariable
+var.memory - *terraform.NodeRootVariable
+var.num_cpus - *terraform.NodeRootVariable
+var.ssh_password - *terraform.NodeRootVariable
+var.template_name - *terraform.NodeRootVariable
+var.vm_domain - *terraform.NodeRootVariable
+var.vm_gateway - *terraform.NodeRootVariable
+var.vm_hostname - *terraform.NodeRootVariable
+var.vm_ip - *terraform.NodeRootVariable
+var.vm_name - *terraform.NodeRootVariable
+var.vm_netmask - *terraform.NodeRootVariable
+var.vm_time_zone - *terraform.NodeRootVariable
+var.vsphere_password - *terraform.NodeRootVariable
+var.vsphere_server - *terraform.NodeRootVariable
+var.vsphere_user - *terraform.NodeRootVariable
+vsphere_virtual_machine.vm - *terraform.NodeRefreshableManagedResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+vsphere_virtual_machine.vm2 - *terraform.NodeRefreshableManagedResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+------
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.AttachSchemaTransformer
+2019/08/20 19:31:58 [TRACE] AttachSchemaTransformer: attaching resource schema to data.vsphere_network.network
+2019/08/20 19:31:58 [TRACE] AttachSchemaTransformer: attaching resource schema to data.vsphere_datacenter.dc
+2019/08/20 19:31:58 [TRACE] AttachSchemaTransformer: attaching resource schema to vsphere_virtual_machine.vm2
+2019/08/20 19:31:58 [TRACE] AttachSchemaTransformer: attaching resource schema to data.vsphere_virtual_machine.template
+2019/08/20 19:31:58 [TRACE] AttachSchemaTransformer: attaching resource schema to vsphere_virtual_machine.vm
+2019/08/20 19:31:58 [TRACE] AttachSchemaTransformer: attaching provisioner "remote-exec" config schema to vsphere_virtual_machine.vm
+2019/08/20 19:31:58 [TRACE] AttachSchemaTransformer: attaching provisioner "local-exec" config schema to vsphere_virtual_machine.vm
+2019/08/20 19:31:58 [TRACE] AttachSchemaTransformer: attaching resource schema to data.vsphere_datastore.datastore
+2019/08/20 19:31:58 [TRACE] AttachSchemaTransformer: attaching provider config schema to provider.vsphere
+2019/08/20 19:31:58 [TRACE] AttachSchemaTransformer: attaching resource schema to data.vsphere_resource_pool.pool
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.AttachSchemaTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "data.vsphere_virtual_machine.template" references: [var.template_name data.vsphere_datacenter.dc]
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "var.memory" references: []
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "var.vm_domain" references: []
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "var.vm_gateway" references: []
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "vsphere_virtual_machine.vm2" references: [var.vm_name var.guest_id var.memory data.vsphere_resource_pool.pool data.vsphere_datastore.datastore var.num_cpus data.vsphere_network.network var.disk_size data.vsphere_virtual_machine.template var.vm_gateway var.dns_server_list var.vm_time_zone var.vm_domain var.vm_hostname var.vm_netmask]
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "data.vsphere_datastore.datastore" references: [data.vsphere_datacenter.dc]
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "var.vm_time_zone" references: []
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "var.disk_size" references: []
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "var.ssh_password" references: []
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "provider.vsphere" references: [var.vsphere_password var.vsphere_user var.vsphere_server]
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "vsphere_virtual_machine.vm" references: [data.vsphere_resource_pool.pool var.num_cpus var.vm_name data.vsphere_datastore.datastore var.memory var.guest_id data.vsphere_network.network var.disk_size data.vsphere_virtual_machine.template var.dns_server_list var.vm_gateway var.vm_domain var.vm_hostname var.vm_time_zone var.vm_ip var.vm_netmask var.vm_ip var.ssh_password var.ssh_password var.ssh_password var.vm_ip var.vm_ip]
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "var.vsphere_user" references: []
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "var.vm_name" references: []
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "var.num_cpus" references: []
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "var.guest_id" references: []
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "var.vm_netmask" references: []
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "data.vsphere_resource_pool.pool" references: [data.vsphere_datacenter.dc]
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "data.vsphere_datacenter.dc" references: []
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "var.vm_hostname" references: []
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "var.dns_server_list" references: []
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "var.template_name" references: []
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "var.vsphere_password" references: []
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "var.vsphere_server" references: []
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "var.vm_ip" references: []
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "data.vsphere_network.network" references: [data.vsphere_datacenter.dc]
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.ReferenceTransformer with new graph:
+data.vsphere_datacenter.dc - *terraform.NodeRefreshableDataResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_datastore.datastore - *terraform.NodeRefreshableDataResource
+  data.vsphere_datacenter.dc - *terraform.NodeRefreshableDataResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_network.network - *terraform.NodeRefreshableDataResource
+  data.vsphere_datacenter.dc - *terraform.NodeRefreshableDataResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_resource_pool.pool - *terraform.NodeRefreshableDataResource
+  data.vsphere_datacenter.dc - *terraform.NodeRefreshableDataResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_virtual_machine.template - *terraform.NodeRefreshableDataResource
+  data.vsphere_datacenter.dc - *terraform.NodeRefreshableDataResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+  var.template_name - *terraform.NodeRootVariable
+provider.vsphere - *terraform.NodeApplyableProvider
+  var.vsphere_password - *terraform.NodeRootVariable
+  var.vsphere_server - *terraform.NodeRootVariable
+  var.vsphere_user - *terraform.NodeRootVariable
+var.disk_size - *terraform.NodeRootVariable
+var.dns_server_list - *terraform.NodeRootVariable
+var.guest_id - *terraform.NodeRootVariable
+var.memory - *terraform.NodeRootVariable
+var.num_cpus - *terraform.NodeRootVariable
+var.ssh_password - *terraform.NodeRootVariable
+var.template_name - *terraform.NodeRootVariable
+var.vm_domain - *terraform.NodeRootVariable
+var.vm_gateway - *terraform.NodeRootVariable
+var.vm_hostname - *terraform.NodeRootVariable
+var.vm_ip - *terraform.NodeRootVariable
+var.vm_name - *terraform.NodeRootVariable
+var.vm_netmask - *terraform.NodeRootVariable
+var.vm_time_zone - *terraform.NodeRootVariable
+var.vsphere_password - *terraform.NodeRootVariable
+var.vsphere_server - *terraform.NodeRootVariable
+var.vsphere_user - *terraform.NodeRootVariable
+vsphere_virtual_machine.vm - *terraform.NodeRefreshableManagedResource
+  data.vsphere_datastore.datastore - *terraform.NodeRefreshableDataResource
+  data.vsphere_network.network - *terraform.NodeRefreshableDataResource
+  data.vsphere_resource_pool.pool - *terraform.NodeRefreshableDataResource
+  data.vsphere_virtual_machine.template - *terraform.NodeRefreshableDataResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+  var.disk_size - *terraform.NodeRootVariable
+  var.dns_server_list - *terraform.NodeRootVariable
+  var.guest_id - *terraform.NodeRootVariable
+  var.memory - *terraform.NodeRootVariable
+  var.num_cpus - *terraform.NodeRootVariable
+  var.ssh_password - *terraform.NodeRootVariable
+  var.vm_domain - *terraform.NodeRootVariable
+  var.vm_gateway - *terraform.NodeRootVariable
+  var.vm_hostname - *terraform.NodeRootVariable
+  var.vm_ip - *terraform.NodeRootVariable
+  var.vm_name - *terraform.NodeRootVariable
+  var.vm_netmask - *terraform.NodeRootVariable
+  var.vm_time_zone - *terraform.NodeRootVariable
+vsphere_virtual_machine.vm2 - *terraform.NodeRefreshableManagedResource
+  data.vsphere_datastore.datastore - *terraform.NodeRefreshableDataResource
+  data.vsphere_network.network - *terraform.NodeRefreshableDataResource
+  data.vsphere_resource_pool.pool - *terraform.NodeRefreshableDataResource
+  data.vsphere_virtual_machine.template - *terraform.NodeRefreshableDataResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+  var.disk_size - *terraform.NodeRootVariable
+  var.dns_server_list - *terraform.NodeRootVariable
+  var.guest_id - *terraform.NodeRootVariable
+  var.memory - *terraform.NodeRootVariable
+  var.num_cpus - *terraform.NodeRootVariable
+  var.vm_domain - *terraform.NodeRootVariable
+  var.vm_gateway - *terraform.NodeRootVariable
+  var.vm_hostname - *terraform.NodeRootVariable
+  var.vm_name - *terraform.NodeRootVariable
+  var.vm_netmask - *terraform.NodeRootVariable
+  var.vm_time_zone - *terraform.NodeRootVariable
+------
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.CloseProviderTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.CloseProviderTransformer with new graph:
+data.vsphere_datacenter.dc - *terraform.NodeRefreshableDataResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_datastore.datastore - *terraform.NodeRefreshableDataResource
+  data.vsphere_datacenter.dc - *terraform.NodeRefreshableDataResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_network.network - *terraform.NodeRefreshableDataResource
+  data.vsphere_datacenter.dc - *terraform.NodeRefreshableDataResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_resource_pool.pool - *terraform.NodeRefreshableDataResource
+  data.vsphere_datacenter.dc - *terraform.NodeRefreshableDataResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_virtual_machine.template - *terraform.NodeRefreshableDataResource
+  data.vsphere_datacenter.dc - *terraform.NodeRefreshableDataResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+  var.template_name - *terraform.NodeRootVariable
+provider.vsphere - *terraform.NodeApplyableProvider
+  var.vsphere_password - *terraform.NodeRootVariable
+  var.vsphere_server - *terraform.NodeRootVariable
+  var.vsphere_user - *terraform.NodeRootVariable
+provider.vsphere (close) - *terraform.graphNodeCloseProvider
+  data.vsphere_datacenter.dc - *terraform.NodeRefreshableDataResource
+  data.vsphere_datastore.datastore - *terraform.NodeRefreshableDataResource
+  data.vsphere_network.network - *terraform.NodeRefreshableDataResource
+  data.vsphere_resource_pool.pool - *terraform.NodeRefreshableDataResource
+  data.vsphere_virtual_machine.template - *terraform.NodeRefreshableDataResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+  vsphere_virtual_machine.vm - *terraform.NodeRefreshableManagedResource
+  vsphere_virtual_machine.vm2 - *terraform.NodeRefreshableManagedResource
+var.disk_size - *terraform.NodeRootVariable
+var.dns_server_list - *terraform.NodeRootVariable
+var.guest_id - *terraform.NodeRootVariable
+var.memory - *terraform.NodeRootVariable
+var.num_cpus - *terraform.NodeRootVariable
+var.ssh_password - *terraform.NodeRootVariable
+var.template_name - *terraform.NodeRootVariable
+var.vm_domain - *terraform.NodeRootVariable
+var.vm_gateway - *terraform.NodeRootVariable
+var.vm_hostname - *terraform.NodeRootVariable
+var.vm_ip - *terraform.NodeRootVariable
+var.vm_name - *terraform.NodeRootVariable
+var.vm_netmask - *terraform.NodeRootVariable
+var.vm_time_zone - *terraform.NodeRootVariable
+var.vsphere_password - *terraform.NodeRootVariable
+var.vsphere_server - *terraform.NodeRootVariable
+var.vsphere_user - *terraform.NodeRootVariable
+vsphere_virtual_machine.vm - *terraform.NodeRefreshableManagedResource
+  data.vsphere_datastore.datastore - *terraform.NodeRefreshableDataResource
+  data.vsphere_network.network - *terraform.NodeRefreshableDataResource
+  data.vsphere_resource_pool.pool - *terraform.NodeRefreshableDataResource
+  data.vsphere_virtual_machine.template - *terraform.NodeRefreshableDataResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+  var.disk_size - *terraform.NodeRootVariable
+  var.dns_server_list - *terraform.NodeRootVariable
+  var.guest_id - *terraform.NodeRootVariable
+  var.memory - *terraform.NodeRootVariable
+  var.num_cpus - *terraform.NodeRootVariable
+  var.ssh_password - *terraform.NodeRootVariable
+  var.vm_domain - *terraform.NodeRootVariable
+  var.vm_gateway - *terraform.NodeRootVariable
+  var.vm_hostname - *terraform.NodeRootVariable
+  var.vm_ip - *terraform.NodeRootVariable
+  var.vm_name - *terraform.NodeRootVariable
+  var.vm_netmask - *terraform.NodeRootVariable
+  var.vm_time_zone - *terraform.NodeRootVariable
+vsphere_virtual_machine.vm2 - *terraform.NodeRefreshableManagedResource
+  data.vsphere_datastore.datastore - *terraform.NodeRefreshableDataResource
+  data.vsphere_network.network - *terraform.NodeRefreshableDataResource
+  data.vsphere_resource_pool.pool - *terraform.NodeRefreshableDataResource
+  data.vsphere_virtual_machine.template - *terraform.NodeRefreshableDataResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+  var.disk_size - *terraform.NodeRootVariable
+  var.dns_server_list - *terraform.NodeRootVariable
+  var.guest_id - *terraform.NodeRootVariable
+  var.memory - *terraform.NodeRootVariable
+  var.num_cpus - *terraform.NodeRootVariable
+  var.vm_domain - *terraform.NodeRootVariable
+  var.vm_gateway - *terraform.NodeRootVariable
+  var.vm_hostname - *terraform.NodeRootVariable
+  var.vm_name - *terraform.NodeRootVariable
+  var.vm_netmask - *terraform.NodeRootVariable
+  var.vm_time_zone - *terraform.NodeRootVariable
+------
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.RootTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.RootTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.TransitiveReductionTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.TransitiveReductionTransformer with new graph:
+data.vsphere_datacenter.dc - *terraform.NodeRefreshableDataResource
+  provider.vsphere - *terraform.NodeApplyableProvider
+data.vsphere_datastore.datastore - *terraform.NodeRefreshableDataResource
+  data.vsphere_datacenter.dc - *terraform.NodeRefreshableDataResource
+data.vsphere_network.network - *terraform.NodeRefreshableDataResource
+  data.vsphere_datacenter.dc - *terraform.NodeRefreshableDataResource
+data.vsphere_resource_pool.pool - *terraform.NodeRefreshableDataResource
+  data.vsphere_datacenter.dc - *terraform.NodeRefreshableDataResource
+data.vsphere_virtual_machine.template - *terraform.NodeRefreshableDataResource
+  data.vsphere_datacenter.dc - *terraform.NodeRefreshableDataResource
+  var.template_name - *terraform.NodeRootVariable
+provider.vsphere - *terraform.NodeApplyableProvider
+  var.vsphere_password - *terraform.NodeRootVariable
+  var.vsphere_server - *terraform.NodeRootVariable
+  var.vsphere_user - *terraform.NodeRootVariable
+provider.vsphere (close) - *terraform.graphNodeCloseProvider
+  vsphere_virtual_machine.vm - *terraform.NodeRefreshableManagedResource
+  vsphere_virtual_machine.vm2 - *terraform.NodeRefreshableManagedResource
+var.disk_size - *terraform.NodeRootVariable
+var.dns_server_list - *terraform.NodeRootVariable
+var.guest_id - *terraform.NodeRootVariable
+var.memory - *terraform.NodeRootVariable
+var.num_cpus - *terraform.NodeRootVariable
+var.ssh_password - *terraform.NodeRootVariable
+var.template_name - *terraform.NodeRootVariable
+var.vm_domain - *terraform.NodeRootVariable
+var.vm_gateway - *terraform.NodeRootVariable
+var.vm_hostname - *terraform.NodeRootVariable
+var.vm_ip - *terraform.NodeRootVariable
+var.vm_name - *terraform.NodeRootVariable
+var.vm_netmask - *terraform.NodeRootVariable
+var.vm_time_zone - *terraform.NodeRootVariable
+var.vsphere_password - *terraform.NodeRootVariable
+var.vsphere_server - *terraform.NodeRootVariable
+var.vsphere_user - *terraform.NodeRootVariable
+vsphere_virtual_machine.vm - *terraform.NodeRefreshableManagedResource
+  data.vsphere_datastore.datastore - *terraform.NodeRefreshableDataResource
+  data.vsphere_network.network - *terraform.NodeRefreshableDataResource
+  data.vsphere_resource_pool.pool - *terraform.NodeRefreshableDataResource
+  data.vsphere_virtual_machine.template - *terraform.NodeRefreshableDataResource
+  var.disk_size - *terraform.NodeRootVariable
+  var.dns_server_list - *terraform.NodeRootVariable
+  var.guest_id - *terraform.NodeRootVariable
+  var.memory - *terraform.NodeRootVariable
+  var.num_cpus - *terraform.NodeRootVariable
+  var.ssh_password - *terraform.NodeRootVariable
+  var.vm_domain - *terraform.NodeRootVariable
+  var.vm_gateway - *terraform.NodeRootVariable
+  var.vm_hostname - *terraform.NodeRootVariable
+  var.vm_ip - *terraform.NodeRootVariable
+  var.vm_name - *terraform.NodeRootVariable
+  var.vm_netmask - *terraform.NodeRootVariable
+  var.vm_time_zone - *terraform.NodeRootVariable
+vsphere_virtual_machine.vm2 - *terraform.NodeRefreshableManagedResource
+  data.vsphere_datastore.datastore - *terraform.NodeRefreshableDataResource
+  data.vsphere_network.network - *terraform.NodeRefreshableDataResource
+  data.vsphere_resource_pool.pool - *terraform.NodeRefreshableDataResource
+  data.vsphere_virtual_machine.template - *terraform.NodeRefreshableDataResource
+  var.disk_size - *terraform.NodeRootVariable
+  var.dns_server_list - *terraform.NodeRootVariable
+  var.guest_id - *terraform.NodeRootVariable
+  var.memory - *terraform.NodeRootVariable
+  var.num_cpus - *terraform.NodeRootVariable
+  var.vm_domain - *terraform.NodeRootVariable
+  var.vm_gateway - *terraform.NodeRootVariable
+  var.vm_hostname - *terraform.NodeRootVariable
+  var.vm_name - *terraform.NodeRootVariable
+  var.vm_netmask - *terraform.NodeRootVariable
+  var.vm_time_zone - *terraform.NodeRootVariable
+------
+2019/08/20 19:31:58 [DEBUG] Starting graph walk: walkRefresh
+2019/08/20 19:31:58 [TRACE] dag/walk: updating graph
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "var.vm_domain"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "var.vm_time_zone"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "vsphere_virtual_machine.vm"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "var.vsphere_user"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "var.vsphere_password"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "var.vsphere_server"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "var.vm_ip"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "var.memory"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "vsphere_virtual_machine.vm2"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "provider.vsphere"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "provider.vsphere (close)"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "var.vm_name"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "data.vsphere_network.network"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "var.disk_size"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "var.num_cpus"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "var.vm_netmask"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "var.dns_server_list"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "var.vm_gateway"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "data.vsphere_virtual_machine.template"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "var.ssh_password"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "data.vsphere_datastore.datastore"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "var.guest_id"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "data.vsphere_resource_pool.pool"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "var.vm_hostname"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "var.template_name"
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "data.vsphere_datacenter.dc"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm" waiting on "var.dns_server_list"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm2" waiting on "var.vm_name"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm" waiting on "data.vsphere_virtual_machine.template"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm" waiting on "data.vsphere_network.network"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "provider.vsphere" waiting on "var.vsphere_user"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "provider.vsphere (close)" waiting on "vsphere_virtual_machine.vm2"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm2" waiting on "var.vm_time_zone"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm2" waiting on "var.memory"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm2" waiting on "var.vm_hostname"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "provider.vsphere (close)" waiting on "vsphere_virtual_machine.vm"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm" waiting on "var.disk_size"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm2" waiting on "var.vm_netmask"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm" waiting on "var.vm_ip"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "data.vsphere_virtual_machine.template" waiting on "data.vsphere_datacenter.dc"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm" waiting on "var.vm_hostname"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "data.vsphere_datastore.datastore" waiting on "data.vsphere_datacenter.dc"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm" waiting on "var.vm_netmask"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm2" waiting on "data.vsphere_network.network"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm" waiting on "data.vsphere_resource_pool.pool"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "provider.vsphere" waiting on "var.vsphere_password"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm" waiting on "var.vm_name"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm2" waiting on "var.guest_id"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm2" waiting on "var.vm_gateway"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm" waiting on "var.vm_time_zone"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm2" waiting on "data.vsphere_virtual_machine.template"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm" waiting on "var.guest_id"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm2" waiting on "var.num_cpus"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm2" waiting on "var.dns_server_list"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "data.vsphere_network.network" waiting on "data.vsphere_datacenter.dc"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm" waiting on "var.vm_gateway"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm2" waiting on "var.vm_domain"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm2" waiting on "data.vsphere_datastore.datastore"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm2" waiting on "var.disk_size"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm" waiting on "var.vm_domain"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm2" waiting on "data.vsphere_resource_pool.pool"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "data.vsphere_datacenter.dc" waiting on "provider.vsphere"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm" waiting on "var.num_cpus"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm" waiting on "data.vsphere_datastore.datastore"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "provider.vsphere" waiting on "var.vsphere_server"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "data.vsphere_virtual_machine.template" waiting on "var.template_name"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm" waiting on "var.ssh_password"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "data.vsphere_resource_pool.pool" waiting on "data.vsphere_datacenter.dc"
+2019/08/20 19:31:58 [TRACE] dag/walk: added edge: "vsphere_virtual_machine.vm" waiting on "var.memory"
+2019/08/20 19:31:58 [TRACE] dag/walk: dependencies changed for "vsphere_virtual_machine.vm", sending new deps
+2019/08/20 19:31:58 [TRACE] dag/walk: dependencies changed for "provider.vsphere (close)", sending new deps
+2019/08/20 19:31:58 [TRACE] dag/walk: dependencies changed for "data.vsphere_virtual_machine.template", sending new deps
+2019/08/20 19:31:58 [TRACE] dag/walk: dependencies changed for "data.vsphere_datastore.datastore", sending new deps
+2019/08/20 19:31:58 [TRACE] dag/walk: dependencies changed for "data.vsphere_network.network", sending new deps
+2019/08/20 19:31:58 [TRACE] dag/walk: dependencies changed for "data.vsphere_resource_pool.pool", sending new deps
+2019/08/20 19:31:58 [TRACE] dag/walk: dependencies changed for "vsphere_virtual_machine.vm2", sending new deps
+2019/08/20 19:31:58 [TRACE] dag/walk: dependencies changed for "provider.vsphere", sending new deps
+2019/08/20 19:31:58 [TRACE] dag/walk: dependencies changed for "data.vsphere_datacenter.dc", sending new deps
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "var.vsphere_server"
+2019/08/20 19:31:58 [TRACE] vertex "var.vsphere_server": starting visit (*terraform.NodeRootVariable)
+2019/08/20 19:31:58 [TRACE] vertex "var.vsphere_server": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "var.vm_time_zone"
+2019/08/20 19:31:58 [TRACE] vertex "var.vm_time_zone": starting visit (*terraform.NodeRootVariable)
+2019/08/20 19:31:58 [TRACE] vertex "var.vm_time_zone": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "var.vsphere_user"
+2019/08/20 19:31:58 [TRACE] vertex "var.vsphere_user": starting visit (*terraform.NodeRootVariable)
+2019/08/20 19:31:58 [TRACE] vertex "var.vsphere_user": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "var.vsphere_password"
+2019/08/20 19:31:58 [TRACE] vertex "var.vsphere_password": starting visit (*terraform.NodeRootVariable)
+2019/08/20 19:31:58 [TRACE] vertex "var.vsphere_password": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "var.vm_domain"
+2019/08/20 19:31:58 [TRACE] vertex "var.vm_domain": starting visit (*terraform.NodeRootVariable)
+2019/08/20 19:31:58 [TRACE] vertex "var.vm_domain": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "var.vm_ip"
+2019/08/20 19:31:58 [TRACE] vertex "var.vm_ip": starting visit (*terraform.NodeRootVariable)
+2019/08/20 19:31:58 [TRACE] vertex "var.vm_ip": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "provider.vsphere"
+2019/08/20 19:31:58 [TRACE] vertex "provider.vsphere": starting visit (*terraform.NodeApplyableProvider)
+2019/08/20 19:31:58 [TRACE] vertex "provider.vsphere": evaluating
+2019/08/20 19:31:58 [TRACE] [walkRefresh] Entering eval tree: provider.vsphere
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalSequence
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalInitProvider
+2019-08-20T19:31:58.246-0700 [INFO]  plugin: configuring client automatic mTLS
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "var.vm_name"
+2019/08/20 19:31:58 [TRACE] vertex "var.vm_name": starting visit (*terraform.NodeRootVariable)
+2019/08/20 19:31:58 [TRACE] vertex "var.vm_name": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "var.memory"
+2019/08/20 19:31:58 [TRACE] vertex "var.memory": starting visit (*terraform.NodeRootVariable)
+2019/08/20 19:31:58 [TRACE] vertex "var.memory": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "var.num_cpus"
+2019/08/20 19:31:58 [TRACE] vertex "var.num_cpus": starting visit (*terraform.NodeRootVariable)
+2019/08/20 19:31:58 [TRACE] vertex "var.num_cpus": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "var.vm_netmask"
+2019/08/20 19:31:58 [TRACE] vertex "var.vm_netmask": starting visit (*terraform.NodeRootVariable)
+2019/08/20 19:31:58 [TRACE] vertex "var.vm_netmask": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "var.dns_server_list"
+2019/08/20 19:31:58 [TRACE] vertex "var.dns_server_list": starting visit (*terraform.NodeRootVariable)
+2019/08/20 19:31:58 [TRACE] vertex "var.dns_server_list": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "var.disk_size"
+2019/08/20 19:31:58 [TRACE] vertex "var.disk_size": starting visit (*terraform.NodeRootVariable)
+2019/08/20 19:31:58 [TRACE] vertex "var.disk_size": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "var.ssh_password"
+2019/08/20 19:31:58 [TRACE] vertex "var.ssh_password": starting visit (*terraform.NodeRootVariable)
+2019/08/20 19:31:58 [TRACE] vertex "var.ssh_password": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "var.guest_id"
+2019/08/20 19:31:58 [TRACE] vertex "var.guest_id": starting visit (*terraform.NodeRootVariable)
+2019/08/20 19:31:58 [TRACE] vertex "var.guest_id": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "var.template_name"
+2019/08/20 19:31:58 [TRACE] vertex "var.template_name": starting visit (*terraform.NodeRootVariable)
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "var.vm_hostname"
+2019/08/20 19:31:58 [TRACE] vertex "var.vm_hostname": starting visit (*terraform.NodeRootVariable)
+2019/08/20 19:31:58 [TRACE] vertex "var.vm_hostname": visit complete
+2019/08/20 19:31:58 [TRACE] vertex "var.template_name": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "var.vm_gateway"
+2019/08/20 19:31:58 [TRACE] vertex "var.vm_gateway": starting visit (*terraform.NodeRootVariable)
+2019/08/20 19:31:58 [TRACE] vertex "var.vm_gateway": visit complete
+2019-08-20T19:31:58.286-0700 [DEBUG] plugin: starting plugin: path=/home/john/terraform-ansible-test-scripts/.terraform/plugins/linux_amd64/terraform-provider-vsphere_v1.12.0_x4 args=[/home/john/terraform-ansible-test-scripts/.terraform/plugins/linux_amd64/terraform-provider-vsphere_v1.12.0_x4]
+2019-08-20T19:31:58.287-0700 [DEBUG] plugin: plugin started: path=/home/john/terraform-ansible-test-scripts/.terraform/plugins/linux_amd64/terraform-provider-vsphere_v1.12.0_x4 pid=5307
+2019-08-20T19:31:58.287-0700 [DEBUG] plugin: waiting for RPC address: path=/home/john/terraform-ansible-test-scripts/.terraform/plugins/linux_amd64/terraform-provider-vsphere_v1.12.0_x4
+2019-08-20T19:31:58.299-0700 [INFO]  plugin.terraform-provider-vsphere_v1.12.0_x4: configuring server automatic mTLS: timestamp=2019-08-20T19:31:58.299-0700
+2019-08-20T19:31:58.338-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: plugin address: address=/tmp/plugin347845108 network=unix timestamp=2019-08-20T19:31:58.338-0700
+2019-08-20T19:31:58.338-0700 [DEBUG] plugin: using plugin: version=5
+2019/08/20 19:31:58 [TRACE] BuiltinEvalContext: Initialized "vsphere" provider for provider.vsphere
+2019/08/20 19:31:58 [TRACE] <root>: eval: terraform.EvalNoop
+2019/08/20 19:31:58 [TRACE] <root>: eval: terraform.EvalNoop
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalOpFilter
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalSequence
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalOpFilter
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalSequence
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalConfigProvider
+2019/08/20 19:31:58 [TRACE] buildProviderConfig for provider.vsphere: using explicit config only
+2019/08/20 19:31:58 [TRACE] GRPCProvider: GetSchema
+2019/08/20 19:31:58 [TRACE] GRPCProvider: Configure
+2019-08-20T19:31:58.442-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 2019/08/20 19:31:58 [DEBUG] Cached SOAP client session data not valid or persistence not enabled, new session necessary
+2019-08-20T19:31:58.442-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 2019/08/20 19:31:58 [DEBUG] Creating new SOAP API session on endpoint 172.27.0.121
+2019-08-20T19:31:58.491-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 2019/08/20 19:31:58 [DEBUG] SOAP API session creation successful
+2019-08-20T19:31:58.491-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 2019/08/20 19:31:58 [DEBUG] VMWare vSphere Client configured for URL: 172.27.0.121
+2019-08-20T19:31:58.491-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 2019/08/20 19:31:58 [DEBUG] No cached REST session data found or persistence not enabled, new session necessary
+2019-08-20T19:31:58.491-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 2019/08/20 19:31:58 [DEBUG] Creating new CIS REST API session on endpoint 172.27.0.121
+2019-08-20T19:31:58.686-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 2019/08/20 19:31:58 [DEBUG] CIS REST API session creation successful
+2019-08-20T19:31:58.686-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 2019/08/20 19:31:58 [DEBUG] CIS REST client configuration successful
+2019/08/20 19:31:58 [TRACE] [walkRefresh] Exiting eval tree: provider.vsphere
+2019/08/20 19:31:58 [TRACE] vertex "provider.vsphere": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "data.vsphere_datacenter.dc"
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_datacenter.dc": starting visit (*terraform.NodeRefreshableDataResource)
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_datacenter.dc": expanding dynamic subgraph
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.ResourceCountTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.ResourceCountTransformer with new graph:
+data.vsphere_datacenter.dc - *terraform.NodeRefreshableDataResourceInstance
+------
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.OrphanResourceCountTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.OrphanResourceCountTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "data.vsphere_datacenter.dc" references: []
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.ReferenceTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.RootTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.RootTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_datacenter.dc": entering dynamic subgraph
+2019/08/20 19:31:58 [TRACE] dag/walk: updating graph
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "data.vsphere_datacenter.dc"
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "data.vsphere_datacenter.dc"
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_datacenter.dc": starting visit (*terraform.NodeRefreshableDataResourceInstance)
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_datacenter.dc": evaluating
+2019/08/20 19:31:58 [TRACE] [walkRefresh] Entering eval tree: data.vsphere_datacenter.dc
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalSequence
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalWriteState
+2019/08/20 19:31:58 [TRACE] EvalWriteState: removing state object for data.vsphere_datacenter.dc
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalIf
+2019/08/20 19:31:58 [TRACE] <root>: eval: terraform.EvalNoop
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalReadData
+2019/08/20 19:31:58 [TRACE] EvalReadData: working on data.vsphere_datacenter.dc
+2019/08/20 19:31:58 [TRACE] Re-validating config for data.vsphere_datacenter.dc
+2019/08/20 19:31:58 [TRACE] GRPCProvider: ValidateDataSourceConfig
+2019/08/20 19:31:58 [TRACE] EvalReadData: data.vsphere_datacenter.dc configuration is complete, so reading from provider
+2019/08/20 19:31:58 [TRACE] GRPCProvider: ReadDataSource
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalIf
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalSequence
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalWriteState
+2019/08/20 19:31:58 [TRACE] EvalWriteState: writing current state object for data.vsphere_datacenter.dc
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalUpdateStateHook
+2019/08/20 19:31:58 [TRACE] [walkRefresh] Exiting eval tree: data.vsphere_datacenter.dc
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_datacenter.dc": visit complete
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_datacenter.dc": dynamic subgraph completed successfully
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_datacenter.dc": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "data.vsphere_virtual_machine.template"
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_virtual_machine.template": starting visit (*terraform.NodeRefreshableDataResource)
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_virtual_machine.template": expanding dynamic subgraph
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.ResourceCountTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.ResourceCountTransformer with new graph:
+data.vsphere_virtual_machine.template - *terraform.NodeRefreshableDataResourceInstance
+------
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.OrphanResourceCountTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.OrphanResourceCountTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "data.vsphere_virtual_machine.template" references: []
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.ReferenceTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.RootTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.RootTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_virtual_machine.template": entering dynamic subgraph
+2019/08/20 19:31:58 [TRACE] dag/walk: updating graph
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "data.vsphere_virtual_machine.template"
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "data.vsphere_virtual_machine.template"
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_virtual_machine.template": starting visit (*terraform.NodeRefreshableDataResourceInstance)
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_virtual_machine.template": evaluating
+2019/08/20 19:31:58 [TRACE] [walkRefresh] Entering eval tree: data.vsphere_virtual_machine.template
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalSequence
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalWriteState
+2019/08/20 19:31:58 [TRACE] EvalWriteState: removing state object for data.vsphere_virtual_machine.template
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalIf
+2019/08/20 19:31:58 [TRACE] <root>: eval: terraform.EvalNoop
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalReadData
+2019/08/20 19:31:58 [TRACE] EvalReadData: working on data.vsphere_virtual_machine.template
+2019/08/20 19:31:58 [TRACE] GetResourceInstance: data.vsphere_datacenter.dc is a single instance
+2019/08/20 19:31:58 [TRACE] Re-validating config for data.vsphere_virtual_machine.template
+2019/08/20 19:31:58 [TRACE] GRPCProvider: ValidateDataSourceConfig
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "data.vsphere_resource_pool.pool"
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_resource_pool.pool": starting visit (*terraform.NodeRefreshableDataResource)
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_resource_pool.pool": expanding dynamic subgraph
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.ResourceCountTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.ResourceCountTransformer with new graph:
+data.vsphere_resource_pool.pool - *terraform.NodeRefreshableDataResourceInstance
+------
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.OrphanResourceCountTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.OrphanResourceCountTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "data.vsphere_resource_pool.pool" references: []
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.ReferenceTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.RootTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.RootTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_resource_pool.pool": entering dynamic subgraph
+2019/08/20 19:31:58 [TRACE] dag/walk: updating graph
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "data.vsphere_resource_pool.pool"
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "data.vsphere_resource_pool.pool"
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_resource_pool.pool": starting visit (*terraform.NodeRefreshableDataResourceInstance)
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_resource_pool.pool": evaluating
+2019/08/20 19:31:58 [TRACE] [walkRefresh] Entering eval tree: data.vsphere_resource_pool.pool
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalSequence
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalWriteState
+2019/08/20 19:31:58 [TRACE] EvalWriteState: removing state object for data.vsphere_resource_pool.pool
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalIf
+2019/08/20 19:31:58 [TRACE] <root>: eval: terraform.EvalNoop
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalReadData
+2019/08/20 19:31:58 [TRACE] EvalReadData: working on data.vsphere_resource_pool.pool
+2019/08/20 19:31:58 [TRACE] GetResourceInstance: data.vsphere_datacenter.dc is a single instance
+2019/08/20 19:31:58 [TRACE] Re-validating config for data.vsphere_resource_pool.pool
+2019/08/20 19:31:58 [TRACE] GRPCProvider: ValidateDataSourceConfig
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "data.vsphere_network.network"
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_network.network": starting visit (*terraform.NodeRefreshableDataResource)
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_network.network": expanding dynamic subgraph
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.ResourceCountTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.ResourceCountTransformer with new graph:
+data.vsphere_network.network - *terraform.NodeRefreshableDataResourceInstance
+------
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.OrphanResourceCountTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.OrphanResourceCountTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "data.vsphere_network.network" references: []
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.ReferenceTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.RootTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.RootTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_network.network": entering dynamic subgraph
+2019/08/20 19:31:58 [TRACE] dag/walk: updating graph
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "data.vsphere_network.network"
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "data.vsphere_network.network"
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_network.network": starting visit (*terraform.NodeRefreshableDataResourceInstance)
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_network.network": evaluating
+2019/08/20 19:31:58 [TRACE] [walkRefresh] Entering eval tree: data.vsphere_network.network
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalSequence
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalWriteState
+2019/08/20 19:31:58 [TRACE] EvalWriteState: removing state object for data.vsphere_network.network
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalIf
+2019/08/20 19:31:58 [TRACE] <root>: eval: terraform.EvalNoop
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalReadData
+2019/08/20 19:31:58 [TRACE] EvalReadData: working on data.vsphere_network.network
+2019/08/20 19:31:58 [TRACE] GetResourceInstance: data.vsphere_datacenter.dc is a single instance
+2019/08/20 19:31:58 [TRACE] Re-validating config for data.vsphere_network.network
+2019/08/20 19:31:58 [TRACE] GRPCProvider: ValidateDataSourceConfig
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "data.vsphere_datastore.datastore"
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_datastore.datastore": starting visit (*terraform.NodeRefreshableDataResource)
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_datastore.datastore": expanding dynamic subgraph
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.ResourceCountTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.ResourceCountTransformer with new graph:
+data.vsphere_datastore.datastore - *terraform.NodeRefreshableDataResourceInstance
+------
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.OrphanResourceCountTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.OrphanResourceCountTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "data.vsphere_datastore.datastore" references: []
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.ReferenceTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.RootTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.RootTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_datastore.datastore": entering dynamic subgraph
+2019/08/20 19:31:58 [TRACE] dag/walk: updating graph
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "data.vsphere_datastore.datastore"
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "data.vsphere_datastore.datastore"
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_datastore.datastore": starting visit (*terraform.NodeRefreshableDataResourceInstance)
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_datastore.datastore": evaluating
+2019/08/20 19:31:58 [TRACE] [walkRefresh] Entering eval tree: data.vsphere_datastore.datastore
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalSequence
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalWriteState
+2019/08/20 19:31:58 [TRACE] EvalWriteState: removing state object for data.vsphere_datastore.datastore
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalIf
+2019/08/20 19:31:58 [TRACE] <root>: eval: terraform.EvalNoop
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalReadData
+2019/08/20 19:31:58 [TRACE] EvalReadData: working on data.vsphere_datastore.datastore
+2019/08/20 19:31:58 [TRACE] GetResourceInstance: data.vsphere_datacenter.dc is a single instance
+2019/08/20 19:31:58 [TRACE] Re-validating config for data.vsphere_datastore.datastore
+2019/08/20 19:31:58 [TRACE] GRPCProvider: ValidateDataSourceConfig
+2019/08/20 19:31:58 [TRACE] EvalReadData: data.vsphere_datastore.datastore configuration is complete, so reading from provider
+2019/08/20 19:31:58 [TRACE] GRPCProvider: ReadDataSource
+2019/08/20 19:31:58 [TRACE] EvalReadData: data.vsphere_network.network configuration is complete, so reading from provider
+2019/08/20 19:31:58 [TRACE] EvalReadData: data.vsphere_virtual_machine.template configuration is complete, so reading from provider
+2019/08/20 19:31:58 [TRACE] EvalReadData: data.vsphere_resource_pool.pool configuration is complete, so reading from provider
+2019/08/20 19:31:58 [TRACE] GRPCProvider: ReadDataSource
+2019/08/20 19:31:58 [TRACE] GRPCProvider: ReadDataSource
+2019/08/20 19:31:58 [TRACE] GRPCProvider: ReadDataSource
+2019-08-20T19:31:58.698-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 2019/08/20 19:31:58 [DEBUG] Looking for VM or template by name/path "originUbuntu16.04New"
+2019-08-20T19:31:58.716-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 2019/08/20 19:31:58 [DEBUG] Datacenter for VM/template search: /Datacenter
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalIf
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalSequence
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalWriteState
+2019/08/20 19:31:58 [TRACE] EvalWriteState: writing current state object for data.vsphere_datastore.datastore
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalUpdateStateHook
+2019/08/20 19:31:58 [TRACE] [walkRefresh] Exiting eval tree: data.vsphere_datastore.datastore
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_datastore.datastore": visit complete
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_datastore.datastore": dynamic subgraph completed successfully
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_datastore.datastore": visit complete
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalIf
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalSequence
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalWriteState
+2019/08/20 19:31:58 [TRACE] EvalWriteState: writing current state object for data.vsphere_network.network
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalUpdateStateHook
+2019/08/20 19:31:58 [TRACE] [walkRefresh] Exiting eval tree: data.vsphere_network.network
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_network.network": visit complete
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_network.network": dynamic subgraph completed successfully
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_network.network": visit complete
+2019-08-20T19:31:58.730-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 2019/08/20 19:31:58 [DEBUG] Fetching properties for VM "/Datacenter/vm/originUbuntu16.04New"
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalIf
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalSequence
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalWriteState
+2019/08/20 19:31:58 [TRACE] EvalWriteState: writing current state object for data.vsphere_resource_pool.pool
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalUpdateStateHook
+2019/08/20 19:31:58 [TRACE] [walkRefresh] Exiting eval tree: data.vsphere_resource_pool.pool
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_resource_pool.pool": visit complete
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_resource_pool.pool": dynamic subgraph completed successfully
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_resource_pool.pool": visit complete
+2019-08-20T19:31:58.744-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 2019/08/20 19:31:58 [DEBUG] ReadSCSIBusType: SCSI controller layout for first 1 controllers: pvscsi-1000
+2019-08-20T19:31:58.744-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 2019/08/20 19:31:58 [DEBUG] ReadSCSIBusSharing: SCSI controller layout for first 1 controllers: pvscsi-1000
+2019-08-20T19:31:58.744-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 2019/08/20 19:31:58 [DEBUG] ReadDiskAttrsForDataSource: Fetching select attributes for disks across 1 SCSI controllers
+2019-08-20T19:31:58.744-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 2019/08/20 19:31:58 [DEBUG] DiskRefreshOperation: Found controller "pvscsi-1000" for device "disk-1000-0"
+2019-08-20T19:31:58.744-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 2019/08/20 19:31:58 [DEBUG] ReadDiskAttrsForDataSource: Disk devices located: disk-1000-0
+2019-08-20T19:31:58.744-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 2019/08/20 19:31:58 [DEBUG] ReadDiskAttrsForDataSource: Disk devices order after sort: disk-1000-0
+2019-08-20T19:31:58.745-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 2019/08/20 19:31:58 [DEBUG] ReadDiskAttrsForDataSource: Attributes returned: [map[thin_provisioned:false size:15 eagerly_scrub:false]]
+2019-08-20T19:31:58.745-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 2019/08/20 19:31:58 [DEBUG] ReadNetworkInterfaceTypes: Fetching interface types
+2019-08-20T19:31:58.745-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 2019/08/20 19:31:58 [DEBUG] ReadNetworkInterfaceTypes: Network devices located: ethernet-0
+2019-08-20T19:31:58.745-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 2019/08/20 19:31:58 [DEBUG] ReadNetworkInterfaceTypes: Network devices order after sort: ethernet-0
+2019-08-20T19:31:58.745-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 2019/08/20 19:31:58 [DEBUG] ReadNetworkInterfaceTypes: Network types returned: [vmxnet3]
+2019-08-20T19:31:58.745-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 2019/08/20 19:31:58 [DEBUG] VM search for "originUbuntu16.04New" completed successfully (UUID "4239c0c5-742d-f9bb-3868-3a873d6cc1dd")
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalIf
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalSequence
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalWriteState
+2019/08/20 19:31:58 [TRACE] EvalWriteState: writing current state object for data.vsphere_virtual_machine.template
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalUpdateStateHook
+2019/08/20 19:31:58 [TRACE] [walkRefresh] Exiting eval tree: data.vsphere_virtual_machine.template
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_virtual_machine.template": visit complete
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_virtual_machine.template": dynamic subgraph completed successfully
+2019/08/20 19:31:58 [TRACE] vertex "data.vsphere_virtual_machine.template": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "vsphere_virtual_machine.vm"
+2019/08/20 19:31:58 [TRACE] vertex "vsphere_virtual_machine.vm": starting visit (*terraform.NodeRefreshableManagedResource)
+2019/08/20 19:31:58 [TRACE] vertex "vsphere_virtual_machine.vm": expanding dynamic subgraph
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.ResourceCountTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.ResourceCountTransformer with new graph:
+vsphere_virtual_machine.vm - *terraform.NodeRefreshableManagedResourceInstance
+------
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.OrphanResourceCountTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.OrphanResourceCountTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2019/08/20 19:31:58 [WARN] no schema for provisioner "remote-exec" is attached to vsphere_virtual_machine.vm, so provisioner block references cannot be detected
+2019/08/20 19:31:58 [WARN] no schema for provisioner "local-exec" is attached to vsphere_virtual_machine.vm, so provisioner block references cannot be detected
+2019/08/20 19:31:58 [WARN] no schema for provisioner "remote-exec" is attached to vsphere_virtual_machine.vm, so provisioner block references cannot be detected
+2019/08/20 19:31:58 [WARN] no schema for provisioner "local-exec" is attached to vsphere_virtual_machine.vm, so provisioner block references cannot be detected
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "vsphere_virtual_machine.vm" references: []
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.ReferenceTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.RootTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.RootTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] vertex "vsphere_virtual_machine.vm": entering dynamic subgraph
+2019/08/20 19:31:58 [TRACE] dag/walk: updating graph
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "vsphere_virtual_machine.vm"
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "vsphere_virtual_machine.vm"
+2019/08/20 19:31:58 [TRACE] vertex "vsphere_virtual_machine.vm": starting visit (*terraform.NodeRefreshableManagedResourceInstance)
+2019/08/20 19:31:58 [TRACE] NodeRefreshableManagedResourceInstance: vsphere_virtual_machine.vm will be refreshed
+2019/08/20 19:31:58 [TRACE] vertex "vsphere_virtual_machine.vm": evaluating
+2019/08/20 19:31:58 [TRACE] [walkRefresh] Entering eval tree: vsphere_virtual_machine.vm
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalSequence
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalReadState
+2019/08/20 19:31:58 [TRACE] EvalReadState: reading state for vsphere_virtual_machine.vm
+2019/08/20 19:31:58 [TRACE] UpgradeResourceState: schema version of vsphere_virtual_machine.vm is still 3; calling provider "vsphere" for any other minor fixups
+2019/08/20 19:31:58 [TRACE] GRPCProvider: UpgradeResourceState
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "vsphere_virtual_machine.vm2"
+2019/08/20 19:31:58 [TRACE] vertex "vsphere_virtual_machine.vm2": starting visit (*terraform.NodeRefreshableManagedResource)
+2019/08/20 19:31:58 [TRACE] vertex "vsphere_virtual_machine.vm2": expanding dynamic subgraph
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.ResourceCountTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.ResourceCountTransformer with new graph:
+vsphere_virtual_machine.vm2 - *terraform.NodeRefreshableManagedResourceInstance
+------
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.OrphanResourceCountTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.OrphanResourceCountTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2019/08/20 19:31:58 [DEBUG] ReferenceTransformer: "vsphere_virtual_machine.vm2" references: []
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.ReferenceTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] Executing graph transform *terraform.RootTransformer
+2019/08/20 19:31:58 [TRACE] Completed graph transform *terraform.RootTransformer (no changes)
+2019/08/20 19:31:58 [TRACE] vertex "vsphere_virtual_machine.vm2": entering dynamic subgraph
+2019/08/20 19:31:58 [TRACE] dag/walk: updating graph
+2019/08/20 19:31:58 [TRACE] dag/walk: added new vertex: "vsphere_virtual_machine.vm2"
+2019/08/20 19:31:58 [TRACE] dag/walk: visiting "vsphere_virtual_machine.vm2"
+2019/08/20 19:31:58 [TRACE] vertex "vsphere_virtual_machine.vm2": starting visit (*terraform.NodeRefreshableManagedResourceInstance)
+2019/08/20 19:31:58 [TRACE] NodeRefreshableManagedResourceInstance: vsphere_virtual_machine.vm2 will be refreshed
+2019/08/20 19:31:58 [TRACE] vertex "vsphere_virtual_machine.vm2": evaluating
+2019/08/20 19:31:58 [TRACE] [walkRefresh] Entering eval tree: vsphere_virtual_machine.vm2
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalSequence
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalReadState
+2019/08/20 19:31:58 [TRACE] EvalReadState: reading state for vsphere_virtual_machine.vm2
+2019/08/20 19:31:58 [TRACE] UpgradeResourceState: schema version of vsphere_virtual_machine.vm2 is still 3; calling provider "vsphere" for any other minor fixups
+2019/08/20 19:31:58 [TRACE] GRPCProvider: UpgradeResourceState
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalRefresh
+2019/08/20 19:31:58 [TRACE] GRPCProvider: ReadResource
+2019-08-20T19:31:58.759-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 2019/08/20 19:31:58 [DEBUG] vsphere_virtual_machine (ID = 4239c0c5-742d-f9bb-3868-3a873d6cc1dd): Reading state of virtual machine
+2019-08-20T19:31:58.759-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 2019/08/20 19:31:58 [DEBUG] Locating virtual machine with UUID "4239c0c5-742d-f9bb-3868-3a873d6cc1dd"
+2019-08-20T19:31:58.759-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 2019/08/20 19:31:58 [DEBUG] Using SearchIndex to look up UUID "4239c0c5-742d-f9bb-3868-3a873d6cc1dd"
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalRefresh
+2019/08/20 19:31:58 [TRACE] GRPCProvider: ReadResource
+2019-08-20T19:31:58.765-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 2019/08/20 19:31:58 [DEBUG] vsphere_virtual_machine (ID = 4239043a-61c8-712a-a143-335654adf301): Reading state of virtual machine
+2019-08-20T19:31:58.765-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 2019/08/20 19:31:58 [DEBUG] Locating virtual machine with UUID "4239043a-61c8-712a-a143-335654adf301"
+2019-08-20T19:31:58.765-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 2019/08/20 19:31:58 [DEBUG] Using SearchIndex to look up UUID "4239043a-61c8-712a-a143-335654adf301"
+2019-08-20T19:31:58.765-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 2019/08/20 19:31:58 [DEBUG] VM "/Datacenter/vm/originUbuntu16.04New" found for UUID "4239c0c5-742d-f9bb-3868-3a873d6cc1dd"
+2019-08-20T19:31:58.765-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 2019/08/20 19:31:58 [DEBUG] Fetching properties for VM "/Datacenter/vm/originUbuntu16.04New"
+2019-08-20T19:31:58.768-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 2019/08/20 19:31:58 [DEBUG] vsphere_virtual_machine (ID = 4239043a-61c8-712a-a143-335654adf301): Virtual machine not found, marking resource as gone: virtual machine with UUID "4239043a-61c8-712a-a143-335654adf301" not found
+2019/08/20 19:31:58 [TRACE] <root>: eval: *terraform.EvalWriteState
+2019/08/20 19:31:58 [TRACE] EvalWriteState: removing state object for vsphere_virtual_machine.vm2
+2019/08/20 19:31:58 [TRACE] [walkRefresh] Exiting eval tree: vsphere_virtual_machine.vm2
+2019/08/20 19:31:58 [TRACE] vertex "vsphere_virtual_machine.vm2": visit complete
+2019/08/20 19:31:58 [TRACE] vertex "vsphere_virtual_machine.vm2": dynamic subgraph completed successfully
+2019/08/20 19:31:58 [TRACE] vertex "vsphere_virtual_machine.vm2": visit complete
+2019-08-20T19:31:58.775-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 2019/08/20 19:31:58 [DEBUG] MOID for VM "/Datacenter/vm/originUbuntu16.04New" is "vm-163"
+2019-08-20T19:31:58.777-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: panic: runtime error: invalid memory address or nil pointer dereference
+2019-08-20T19:31:58.777-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: [signal SIGSEGV: segmentation violation code=0x1 addr=0x18 pc=0x1214c58]
+2019-08-20T19:31:58.777-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 
+2019-08-20T19:31:58.777-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: goroutine 67 [running]:
+2019-08-20T19:31:58.777-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: github.com/terraform-providers/terraform-provider-vsphere/vsphere.resourceVSphereVirtualMachineRead(0xc00015f6c0, 0x143d8e0, 0xc0001436f0, 0xc00015f6c0, 0x0)
+2019-08-20T19:31:58.777-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 	/opt/teamcity-agent/work/5d79fe75d4460a2f/src/github.com/terraform-providers/terraform-provider-vsphere/vsphere/resource_vsphere_virtual_machine.go:371 +0x698
+2019-08-20T19:31:58.778-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: github.com/terraform-providers/terraform-provider-vsphere/vendor/github.com/hashicorp/terraform/helper/schema.(*Resource).RefreshWithoutUpgrade(0xc00012de00, 0xc00049ef00, 0x143d8e0, 0xc0001436f0, 0xc0005117a0, 0xc00049ef00, 0x0)
+2019-08-20T19:31:58.778-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 	/opt/teamcity-agent/work/5d79fe75d4460a2f/src/github.com/terraform-providers/terraform-provider-vsphere/vendor/github.com/hashicorp/terraform/helper/schema/resource.go:447 +0x11c
+2019-08-20T19:31:58.778-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: github.com/terraform-providers/terraform-provider-vsphere/vendor/github.com/hashicorp/terraform/helper/plugin.(*GRPCProviderServer).ReadResource(0xc000092b68, 0x1993c80, 0xc000631a10, 0xc00049ed20, 0xc000092b68, 0xc000631980, 0x1459500)
+2019-08-20T19:31:58.778-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 	/opt/teamcity-agent/work/5d79fe75d4460a2f/src/github.com/terraform-providers/terraform-provider-vsphere/vendor/github.com/hashicorp/terraform/helper/plugin/grpc_provider.go:499 +0x30e
+2019-08-20T19:31:58.778-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: github.com/terraform-providers/terraform-provider-vsphere/vendor/github.com/hashicorp/terraform/internal/tfplugin5._Provider_ReadResource_Handler(0x16bed20, 0xc000092b68, 0x1993c80, 0xc000631a10, 0xc00049ecd0, 0x0, 0x0, 0x0, 0xc00054f500, 0xa7e)
+2019-08-20T19:31:58.778-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 	/opt/teamcity-agent/work/5d79fe75d4460a2f/src/github.com/terraform-providers/terraform-provider-vsphere/vendor/github.com/hashicorp/terraform/internal/tfplugin5/tfplugin5.pb.go:3181 +0x23e
+2019-08-20T19:31:58.778-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: github.com/terraform-providers/terraform-provider-vsphere/vendor/google.golang.org/grpc.(*Server).processUnaryRPC(0xc000097200, 0x199a320, 0xc000001e00, 0xc0005b6900, 0xc00013c420, 0x29876b0, 0x0, 0x0, 0x0)
+2019-08-20T19:31:58.778-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 	/opt/teamcity-agent/work/5d79fe75d4460a2f/src/github.com/terraform-providers/terraform-provider-vsphere/vendor/google.golang.org/grpc/server.go:966 +0x4a2
+2019-08-20T19:31:58.779-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: github.com/terraform-providers/terraform-provider-vsphere/vendor/google.golang.org/grpc.(*Server).handleStream(0xc000097200, 0x199a320, 0xc000001e00, 0xc0005b6900, 0x0)
+2019-08-20T19:31:58.779-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 	/opt/teamcity-agent/work/5d79fe75d4460a2f/src/github.com/terraform-providers/terraform-provider-vsphere/vendor/google.golang.org/grpc/server.go:1245 +0xd61
+2019-08-20T19:31:58.779-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: github.com/terraform-providers/terraform-provider-vsphere/vendor/google.golang.org/grpc.(*Server).serveStreams.func1.1(0xc0003b2e60, 0xc000097200, 0x199a320, 0xc000001e00, 0xc0005b6900)
+2019-08-20T19:31:58.779-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 	/opt/teamcity-agent/work/5d79fe75d4460a2f/src/github.com/terraform-providers/terraform-provider-vsphere/vendor/google.golang.org/grpc/server.go:685 +0x9f
+2019-08-20T19:31:58.779-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: created by github.com/terraform-providers/terraform-provider-vsphere/vendor/google.golang.org/grpc.(*Server).serveStreams.func1
+2019-08-20T19:31:58.779-0700 [DEBUG] plugin.terraform-provider-vsphere_v1.12.0_x4: 	/opt/teamcity-agent/work/5d79fe75d4460a2f/src/github.com/terraform-providers/terraform-provider-vsphere/vendor/google.golang.org/grpc/server.go:683 +0xa1
+2019/08/20 19:31:58 [ERROR] <root>: eval: *terraform.EvalRefresh, err: rpc error: code = Unavailable desc = transport is closing
+2019/08/20 19:31:58 [ERROR] <root>: eval: *terraform.EvalSequence, err: rpc error: code = Unavailable desc = transport is closing
+2019/08/20 19:31:58 [TRACE] [walkRefresh] Exiting eval tree: vsphere_virtual_machine.vm
+2019/08/20 19:31:58 [TRACE] vertex "vsphere_virtual_machine.vm": visit complete
+2019/08/20 19:31:58 [TRACE] vertex "vsphere_virtual_machine.vm": dynamic subgraph encountered errors
+2019/08/20 19:31:58 [TRACE] vertex "vsphere_virtual_machine.vm": visit complete
+2019/08/20 19:31:58 [TRACE] dag/walk: upstream of "provider.vsphere (close)" errored, so skipping
+2019/08/20 19:31:58 [TRACE] statemgr.Filesystem: removing lock metadata file .terraform.tfstate.lock.info
+2019/08/20 19:31:58 [TRACE] statemgr.Filesystem: unlocking terraform.tfstate using fcntl flock
+2019-08-20T19:31:58.783-0700 [DEBUG] plugin: plugin process exited: path=/home/john/terraform-ansible-test-scripts/.terraform/plugins/linux_amd64/terraform-provider-vsphere_v1.12.0_x4 pid=5307 error="exit status 2"
+2019-08-20T19:31:58.783-0700 [DEBUG] plugin: plugin exited

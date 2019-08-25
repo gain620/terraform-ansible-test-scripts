@@ -31,7 +31,7 @@ variable "vm_name" {
 }
 
 variable "template_name" {
-	default = "ubuntu16.04Origin"
+	default = "originUbuntu16.04New"
 }
 
 variable "vm_hostname" {
